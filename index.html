@@ -166,13 +166,37 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Notes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-上传GitHub报错解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/11/29/%E4%B8%8A%E4%BC%A0GitHub%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">上传GitHub报错解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2023/11/29/%E4%B8%8A%E4%BC%A0GitHub%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
+  	<time datetime="2023-11-29T06:37:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-29</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaof/p/9071532.html">《深入理解计算机系统》阅读笔记–信息的表示和处理（上） - fan-tastic - 博客园 (cnblogs.com)</a><br>![[Pasted image 20230915201804.png]]</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wqy248/article/details/90607452">深入理解计算机系统第三章理解和习题解析之数据格式和mov指令_movl指令的含义-CSDN博客</a><br>![[Pasted image 20230928133231.png]]</p>
+        <p><strong>系统：</strong> win 11</p>
+<h1 id="错误信息-1-fatal-unable-to-access…-Recv-failure-Connection-was-reset"><a href="#错误信息-1-fatal-unable-to-access…-Recv-failure-Connection-was-reset" class="headerlink" title="错误信息  1: fatal: unable to access… Recv failure: Connection was reset"></a>错误信息  1: fatal: unable to access… Recv failure: Connection was reset</h1><p>这个错误的解决重点并不在 fatal，而是在后面的 <code>Recv failure: Connection was reset</code>，故大部分情况下搜索到的解决方案如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//取消http代理 </span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy </span><br><span class="line">//取消https代理 </span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<p>并不能解决这个错误。</p>
+<p><strong>解决方案：</strong></p>
+<ol>
+<li>打开<strong>设置</strong>中的<strong>网络和 Internet &gt; 代理</strong>，找到<strong>手动设置代理</strong>，点击<strong>编辑</strong>，记下地址和端口号 <code>127.0.0.1:10809</code> <img src="/2023/11/29/%E4%B8%8A%E4%BC%A0GitHub%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E4%BB%A3%E7%90%86%E5%9C%B0%E5%9D%80%E5%92%8C%E7%AB%AF%E5%8F%A3.png" alt="代理地址和端口"></li>
+<li>在终端输入命令 <code>git config --global http.proxy http://127.0.0.1:10809</code></li>
+<li>查看是否设置成功 <code>git config --global -l</code></li>
+<li>再次上传 <code>hexo d</code>，成功。</li>
+</ol>
 
       
 
@@ -185,7 +209,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/11/28/Notes/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/11/29/%E4%B8%8A%E4%BC%A0GitHub%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
         </p>
       
 
