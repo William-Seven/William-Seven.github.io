@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>chmod命令的快速使用指导 | Hexo</title>
+  <title>Linux执行Ctrl-z后出现[1]+Stopped | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="chmod 命令用于更改文件或目录的权限。它的基本语法是：">
+  <meta name="description" content="问题描述笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chmod命令的快速使用指导">
-<meta property="og:url" content="http://example.com/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/index.html">
+<meta property="og:title" content="Linux执行Ctrl-z后出现[1]+Stopped">
+<meta property="og:url" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="chmod 命令用于更改文件或目录的权限。它的基本语法是：">
+<meta property="og:description" content="问题描述笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-20T12:36:17.000Z">
-<meta property="article:modified_time" content="2024-01-20T12:38:05.970Z">
+<meta property="og:image" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png">
+<meta property="article:published_time" content="2024-03-01T11:23:05.000Z">
+<meta property="article:modified_time" content="2024-03-01T11:34:18.354Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -168,7 +170,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-chmod命令的快速使用指导"
+            <article id="post-Linux执行Ctrl-z后出现-1-Stopped"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      chmod命令的快速使用指导
+      Linux执行Ctrl-z后出现[1]+Stopped
     </h1>
   
 
@@ -192,80 +194,18 @@
             
               <!--显示阅读次数完毕-->
               
-                <a href="/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="archive-article-date">
-  	<time datetime="2024-01-20T12:36:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-20</time>
+                <a href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" class="archive-article-date">
+  	<time datetime="2024-03-01T11:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-01</time>
 </a>
                   
       </header>
       
         <div class="article-entry" itemprop="articleBody">
           
-                    <p><strong>chmod 命令用于更改文件或目录的权限。</strong><br>它的基本语法是：</p>
+                    <p><strong>问题描述</strong><br>笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped<br><img src="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png"></p>
 <span id="more"></span>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> [选项] 模式 文件或目录</span><br></pre></td></tr></table></figure>
-<p>其中：</p>
-<ol>
-<li>选项是一些用于修改权限的额外参数。</li>
-<li>模式是用于指定权限的数字或符号。</li>
-<li>文件或目录是你要修改权限的文件或目录的名称。</li>
-</ol>
-<p>以下是一些常用的 chmod 选项和模式：</p>
-<ol>
-<li><strong>使用数字模式：</strong></li>
-</ol>
-<ul>
-<li><p><strong>数字模式：</strong></p>
-<ul>
-<li>4：读权限（r）</li>
-<li>2：写权限（w）</li>
-<li>1：执行权限（x）</li>
-</ul>
-</li>
-<li><p><strong>组合：</strong></p>
-<ul>
-<li>0：无权限</li>
-<li>7：读、写、执行权限</li>
-<li>6：读、写权限</li>
-<li>5：读、执行权限</li>
-<li>4：读权限</li>
-<li>3：写、执行权限</li>
-<li>2：写权限</li>
-<li>1：执行权限</li>
-</ul>
-</li>
-</ul>
-<p>例如，将文件 example. txt 设置为所有者具有读写权限，组和其他用户只有读权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 644 example. txt</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>使用符号模式：</strong></li>
-</ol>
-<ul>
-<li><p><strong>符号模式：</strong></p>
-<ul>
-<li><code>+</code>：添加权限</li>
-<li><code>-</code>：删除权限</li>
-<li><code>=</code>：设置权限</li>
-</ul>
-</li>
-<li><p><strong>权限：</strong></p>
-<ul>
-<li><code>r</code>：读权限</li>
-<li><code>w</code>：写权限</li>
-<li><code>x</code>：执行权限</li>
-</ul>
-</li>
-<li><p><strong>用户：</strong></p>
-<ul>
-<li><code>u</code>：所有者</li>
-<li><code>g</code>：组</li>
-<li><code>o</code>：其他用户</li>
-<li><code>a</code>：所有用户（u、g、o 的组合）</li>
-</ul>
-</li>
-</ul>
-<p>例如，将文件 example. txt 设置为所有者具有读写权限，组用户只有读权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u=rw,g=r example. txt</span><br></pre></td></tr></table></figure>
+<p><strong>解释</strong><br>其中，Stopped 代表有进程挂起 ，[1]是id号</p>
+<p><strong>解决方法</strong><br>可以通过Linux命令：<br><code>jobs</code> 查看挂起进程<br><code>fg 1</code> 把任务1放到前台<br><code>bg 1</code> 把任务1放到后台</p>
 
                       
 
@@ -347,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -361,18 +301,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Linux执行Ctrl-z后出现[1]+Stopped
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/11/29/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Ahexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">三步学会hexo文章插入图片</div>
+    <a href="/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">chmod命令的快速使用指导</div>
       <i class="icon-circle-right"></i>
     </a>
   
