@@ -91,10 +91,6 @@
 								
 									
 							
-								<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">
-									友链
-								</a>
-								
 									
 							
 								<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">
@@ -193,22 +189,52 @@
     </h1>
   
 
-          <!--显示阅读次数-->
+
           
-            <br />
-            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-              <span class="icon-sort"></span>
-              <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-                阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-              </span>
-            </a>
-            
-              <!--显示阅读次数完毕-->
-              
-                <a href="/2024/08/14/%E7%AC%AC24%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" class="archive-article-date">
+            <a href="/2024/08/14/%E7%AC%AC24%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" class="archive-article-date">
   	<time datetime="2024-08-14T12:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-14</time>
 </a>
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> </span>
+            <span class="post-count">
+                7.5k字
+            </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 预计阅读时长: </span>
+            <span class="post-count">
+                36min
+            </span>
+        </span>
+    </span>
+</div>
                   
+                    <!-- 添加完成 -->
+                    
+
+                      <!--显示阅读次数-->
+                      
+                        <br />
+                        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+                          <span class="icon-sort"></span>
+                          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+                          </span>
+                        </a>
+                        
+                          <!--显示阅读次数完毕-->
+
       </header>
       
         <div class="article-entry" itemprop="articleBody">
@@ -539,7 +565,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -580,8 +606,6 @@ MathJax.Hub.Queue(function() {
       
     
       
-      
-      
     
       
       
@@ -593,15 +617,13 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -684,18 +706,6 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
