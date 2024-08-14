@@ -367,8 +367,9 @@ body {
     font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
     line-height: 1.5;
     color: #333;
-    background-color: #fff;
-    min-height: 100%
+    /*background-color: #fff;*/
+    min-height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('img/mainbg.jpg') no-repeat 0% 0%/ cover;
 }
 
 article,
@@ -877,7 +878,7 @@ textarea {
 
 body {
     overflow-y: hidden;
-    background: #eaeaea
+    /*background: #eaeaea*/
 }
 
 #container,
@@ -914,7 +915,7 @@ html {
     position: absolute;
     right: 0;
     min-height: 100%;
-    background: #eaeaea;
+    /*background: #eaeaea;*/
     left: 300px;
     width: auto
 }
@@ -929,8 +930,8 @@ html {
 }
 
 .left-col {
-    /* background:#fff; */
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/bg.jpg) no-repeat 0% 20%/ cover;
+    background: #ffffff00;
+    /*background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/bg.jpg) no-repeat 0% 0%/ cover;*/
     width: 300px;
     position: fixed;
     opacity: 1;
@@ -2206,7 +2207,8 @@ pre .id {
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-    background: #fff;
+    /*background: #fff;*/
+    background: rgba(255, 255, 255, .5);
     transition: all .2s ease-in
 }
 
@@ -2744,7 +2746,7 @@ pre .id {
 .page-reward .reward-p {
     color: #fff;
     font-weight: 700;
-    text-shadow: 1px 1px 1px #45b9e0
+    text-shadow: 1px 1px 1px #4a45e0da
 }
 
 .page-reward .reward-p .icon {
