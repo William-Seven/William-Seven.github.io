@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tags | William&#39;s Blog</title>
+  <title>第29次CCFCSP题4解题报告 | William&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My baby blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="本次报告撰写人：WilliamZH题目：202303-4，第29次CCFCSP使用语言：C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第29次CCFCSP题4解题报告">
+<meta property="og:url" content="http://example.com/2024/08/14/%E7%AC%AC29%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="William&#39;s Blog">
-<meta property="og:description" content="My baby blog">
+<meta property="og:description" content="本次报告撰写人：WilliamZH题目：202303-4，第29次CCFCSP使用语言：C++">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-14T08:51:53.000Z">
-<meta property="article:modified_time" content="2024-08-14T09:28:31.093Z">
+<meta property="article:published_time" content="2024-08-14T13:45:12.000Z">
+<meta property="article:modified_time" content="2024-08-14T13:50:32.768Z">
 <meta property="article:author" content="William">
+<meta property="article:tag" content="CCFCSP">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="William&#39;s Blog" type="application/atom+xml">
@@ -176,46 +178,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="tags-"
-  class="article article-type-tags " itemscope itemprop="blogPost">
+            <article id="post-第29次CCFCSP题4解题报告"
+  class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      第29次CCFCSP题4解题报告
     </h1>
   
 
           <!--显示阅读次数-->
           
+            <br />
+            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+              </span>
+            </a>
+            
               <!--显示阅读次数完毕-->
               
-                <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2024-08-14T08:51:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-14</time>
+                <a href="/2024/08/14/%E7%AC%AC29%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" class="archive-article-date">
+  	<time datetime="2024-08-14T13:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-14</time>
 </a>
                   
       </header>
       
         <div class="article-entry" itemprop="articleBody">
           
-            <div class="tag-cloud">
-              <div class="tag-cloud-title">
-                <h3>共计&nbsp;5&nbsp;个标签</h3>
-              </div>
+                
+                          <p>本次报告撰写人：WilliamZH<br>题目：202303-4，第29次CCFCSP<br>使用语言：C++</p>
+<span id="more"></span>
 
-              <div class="tag-cloud-tags">
-                <a href="/tags/CCFCSP/" style="font-size: 30px; color: #111">CCFCSP</a> <a href="/tags/Linux/" style="font-size: 21px; color: #6f6f6f">Linux</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 30px; color: #111">算法</a>
-              </div>
-            </div>
+<h1 id="202303-4-星际网络-II"><a href="#202303-4-星际网络-II" class="headerlink" title="202303-4 星际网络 II"></a>202303-4 星际网络 II</h1><h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>地址分配采用类似 IPv6的十六进制表示法，每 $4$ 位用”: “隔开。地址长度 $n$ 是 $16$ 的倍数，每个地址由 $n$ 位二进制位组成。<br>三种操作：</p>
+<ul>
+<li><code>1 id l r</code>：表示用户 $id$ 申请地址在 $l∼r$ 范围内（包含 $l$ 和 $r$）的一段连续地址块。<br>若申请的地址全部未被分配，则检查通过；若地址中存在已分配给其他用户的地址，则检查失败。<br>特殊情况：申请地址中没有已分配给其他用户的地址，但含有已分配给该用户的地址。此时认为检查通过，但若申请的地址先前已全部分配给该用户则检查失败。<br>如果检查通过，则返回 <code>YES</code>，并将申请地址分配给该用户；若不通过，返回 <code>NO</code>，不改变现有地址分配。</li>
+<li><code>2 s</code>：检查地址 $s$ 被分配给了哪个用户。若未被分配，则结果为 $0$。</li>
+<li><code>3 l r</code>：检查 $l∼r$ 范围内的所有地址是否完整分配给了某用户。若是，回答用户编号；若否，回答 $0$。<br>输入格式：<br>第一行，$2$ 个正整数 $n,q$。接下来 $q$ 行，每行一个操作，格式如上所述。<br>输出格式：<br>输出 $q$ 行，每行一个非负整数或字符串，表示此次操作的结果。<br>$n≤512,id≤q≤5×10^4$</li>
+</ul>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>线段树。</p>
+<ol>
+<li>存储数据：<br>定义一个结构体 <code>node</code>，用来处理每个操作的信息：<code>op</code> 表示操作类型，<code>id</code> 表示用户编号，<code>l，r</code> 表示左边界和右边界。<ol>
+<li>对于操作 1：<br>将左右边界分别存到一个数组里，并计算右边界+1 后的地址，也存到数组里（将地址范围变成一个左闭右开的区间，方便进行地址分配和范围的比较）。</li>
+<li>对于操作 2：仅读取地址并将其添加到数组。</li>
+<li>对于操作 3：读取左边界和右边界，并将它们和右边界的下一个地址添加到数组。</li>
+</ol>
+</li>
+<li>处理数据：<br>最大值和最小值存储地址分配 <code>id</code> 的最大值和最小值，和值存储当前地址块已经有多少地址被分配。<ol>
+<li>对数组进行排序并删去重复的元素。</li>
+<li>构造线段树：<code>build</code> 函数使用递归方式构建线段树。初始化每个节点的属性，将范围分为两半，并在每一半上调用自身以构建子节点。最后，调用 <code>pushup</code> 函数更新当前节点的值。<br><code>build</code> 函数三个参数：<code>id</code> 表示当前节点，<code>L</code> 表示当前节点区间的左边界，<code>R</code> 表示当前节点区间的右边界。首先为当前节点设置左边界 <code>l[id]</code>、右边界 <code>r[id]</code>、最小值 <code>mn[id]</code> 和最大值 <code>mx[id]</code> 初始值。如果当前节点的左边界大于等于右边界（即区间只有一个元素），则直接返回，当前节点为叶子节点。否则，计算当前区间的中间位置 <code>mid</code>，然后递归地构建左子树和右子树。左子树的索引为 <code>id &lt;&lt; 1</code>；右子树的索引为 <code>id &lt;&lt; 1 | 1</code>。<br><code>pushup</code> 函数利用左子节点和右子节点的索引访问对应的子节点的值。然后，通过 <code>max</code> 函数更新当前节点的最大值，通过 <code>min</code> 函数更新当前节点的最小值，通过加法操作更新当前节点的和值。</li>
+</ol>
+</li>
+<li>进行操作 1：<br>先查询该区间内地址编号的最小值，如果最小值是初始值，说明没有进行分配，直接全部赋值为 <code>id</code>。如果发现最小值不是初始值，查最大值，如果最小值和最大值不同，说明这块地址多人分配，无需操作；如果最小值和最大值相同，那么地址分配给了一个人，然后用区间和来查询是否全部地址都分配给了这个人，如果区间和等于区间长度，说明这段地址空间全部分配给了一个人，否则判断所查询值与待分配编号是否相同。<ol>
+<li>先通过 <code>find</code> 函数查询左右边界在数组中的位置。**(使用 <code>lower_bound</code> 函数查找，时间复杂度 $O(log\ n)$，若直接遍历查找会超时)**</li>
+<li>查询当前区间地址是否被分配：<ol>
+<li><code>judgemin(int id, int L, int R) </code> 函数: 如果当前节点的区间完全包含在目标区间内，则直接返回当前节点的最小值。否则，调用 <code>pushdown</code> 函数将延迟标记向下传递，并通过递归调用查询左右子节点的最小值，并返回其中的较小值。</li>
+<li><code>pushdown(int id)</code>: 如果当前节点的延迟标记 <code>lazy[id]</code> 不等于预设值，则将节点的子节点进行更新。最后将当前节点的延迟标记重新设置为预设值。</li>
+</ol>
+</li>
+<li>如果未被分配，输出 <code>YES</code> 并调用 <code>update</code> 函数，将该区间内的节点信息更新。</li>
+<li>如果只分配给了一个人<ol>
+<li>通过函数 <code>judgesum</code> 判断是否全部分配给了当前 <code>id</code>。<br>首先，检查当前节点是否完全位于查询区间内，如果是，则直接返回该节点的和值 <code>sum[id]</code>。否则，调用 <code>pushdown</code> 函数将当前节点的懒惰标记进行推送，然后计算当前节点的中点 <code>mid</code>。接着，根据 <code>mid</code> 和查询区间的关系，递归调用 <code>judgesum</code> 函数在左子节点或右子节点上进行查询，并将两者的结果累加到 <code>ans</code> 变量中。最后，返回 <code>ans</code>。</li>
+<li>如果全部分配，则输出 <code>NO</code>，否则输出 <code>YES</code>并更新信息。</li>
+</ol>
+</li>
+<li>如果分配给其他人，输出 <code>NO</code></li>
+</ol>
+</li>
+<li>进行操作 2：<br>单点查询。</li>
+<li>进行操作 3；<br>与操作 1 类似。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ls(o) (o &lt;&lt; 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rs(o) (ls(o) | 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ini 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n, q;</span><br><span class="line">vector&lt;string&gt; saveadds;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> op, id;</span><br><span class="line">    string l, r;</span><br><span class="line">&#125;act[N];</span><br><span class="line"><span class="type">int</span> l[N], r[N], mx[N], mn[N], lazy[N], sum[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> id)</span> </span>&#123;</span><br><span class="line">    mx[id] = <span class="built_in">max</span>(mx[<span class="built_in">ls</span>(id)], mx[<span class="built_in">rs</span>(id)]);</span><br><span class="line">    mn[id] = <span class="built_in">min</span>(mn[<span class="built_in">ls</span>(id)], mn[<span class="built_in">rs</span>(id)]);</span><br><span class="line">    sum[id] = sum[<span class="built_in">ls</span>(id)] + sum[<span class="built_in">rs</span>(id)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//建树</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> id, <span class="type">int</span> L, <span class="type">int</span> R)</span> </span>&#123;</span><br><span class="line">    l[id] = L;</span><br><span class="line">    r[id] = R;</span><br><span class="line">    mn[id] = ini;</span><br><span class="line">    mx[id] = -ini;</span><br><span class="line">    lazy[id] = ini;</span><br><span class="line">    <span class="keyword">if</span> (L &gt;= R) </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(<span class="built_in">ls</span>(id), L, mid);</span><br><span class="line">    <span class="built_in">build</span>(<span class="built_in">rs</span>(id), mid + <span class="number">1</span>, R);</span><br><span class="line">    <span class="built_in">pushup</span>(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> id)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lazy[id] != ini) &#123;</span><br><span class="line">        sum[<span class="built_in">ls</span>(id)] = r[<span class="built_in">ls</span>(id)] - l[<span class="built_in">ls</span>(id)] + <span class="number">1</span>;</span><br><span class="line">        sum[<span class="built_in">rs</span>(id)] = r[<span class="built_in">rs</span>(id)] - l[<span class="built_in">rs</span>(id)] + <span class="number">1</span>;</span><br><span class="line">        mx[<span class="built_in">ls</span>(id)] = lazy[id];</span><br><span class="line">        mx[<span class="built_in">rs</span>(id)] = lazy[id];</span><br><span class="line">        mn[<span class="built_in">ls</span>(id)] = lazy[id];</span><br><span class="line">        mn[<span class="built_in">rs</span>(id)] = lazy[id];</span><br><span class="line">        lazy[<span class="built_in">ls</span>(id)] = lazy[id];</span><br><span class="line">        lazy[<span class="built_in">rs</span>(id)] = lazy[id];</span><br><span class="line">        lazy[id] = ini;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//查找数组中出现s的位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">lower_bound</span>(saveadds.<span class="built_in">begin</span>(), saveadds.<span class="built_in">end</span>(), s) - saveadds.<span class="built_in">begin</span>() + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">judgemin</span><span class="params">(<span class="type">int</span> id, <span class="type">int</span> L, <span class="type">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l[id] &gt;= L &amp;&amp; r[id] &lt;= R) </span><br><span class="line">        <span class="keyword">return</span> mn[id];</span><br><span class="line">    <span class="built_in">pushdown</span>(id);</span><br><span class="line">    <span class="type">int</span> mid = l[id] + r[id] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> ans = ini;</span><br><span class="line">    <span class="keyword">if</span> (mid &gt;= L) </span><br><span class="line">        ans = <span class="built_in">judgemin</span>(<span class="built_in">ls</span>(id), L, R);</span><br><span class="line">    <span class="keyword">if</span> (mid + <span class="number">1</span> &lt;= R) </span><br><span class="line">        ans = <span class="built_in">min</span>(ans, <span class="built_in">judgemin</span>(<span class="built_in">rs</span>(id), L, R));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//更新节点信息</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> id, <span class="type">int</span> L, <span class="type">int</span> R, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l[id] &gt;= L &amp;&amp; r[id] &lt;= R) &#123;</span><br><span class="line">        sum[id] = r[id] - l[id] + <span class="number">1</span>;</span><br><span class="line">        mx[id] = val;</span><br><span class="line">        mn[id] = val;</span><br><span class="line">        lazy[id] = val;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushdown</span>(id);</span><br><span class="line">    <span class="type">int</span> mid = l[id] + r[id] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (mid &gt;= L) </span><br><span class="line">        <span class="built_in">update</span>(<span class="built_in">ls</span>(id), L, R, val);</span><br><span class="line">    <span class="keyword">if</span> (mid + <span class="number">1</span> &lt;= R) </span><br><span class="line">        <span class="built_in">update</span>(<span class="built_in">rs</span>(id), L, R, val);</span><br><span class="line">    <span class="built_in">pushup</span>(id);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断该地址是否已经全部分配给id </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">judgesum</span><span class="params">(<span class="type">int</span> id, <span class="type">int</span> L, <span class="type">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l[id] &gt;= L &amp;&amp; r[id] &lt;= R) </span><br><span class="line">        <span class="keyword">return</span> sum[id];</span><br><span class="line">    <span class="built_in">pushdown</span>(id);</span><br><span class="line">    <span class="type">int</span> mid = l[id] + r[id] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (mid &gt;= L) </span><br><span class="line">        ans += <span class="built_in">judgesum</span>(<span class="built_in">ls</span>(id), L, R);</span><br><span class="line">    <span class="keyword">if</span> (mid + <span class="number">1</span> &lt;= R) </span><br><span class="line">        ans += <span class="built_in">judgesum</span>(<span class="built_in">rs</span>(id), L, R);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">judgemax</span><span class="params">(<span class="type">int</span> id, <span class="type">int</span> L, <span class="type">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l[id] &gt;= L &amp;&amp; r[id] &lt;= R) </span><br><span class="line">        <span class="keyword">return</span> mx[id];</span><br><span class="line">    <span class="built_in">pushdown</span>(id);</span><br><span class="line">    <span class="type">int</span> mid = l[id] + r[id] &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> ans = -ini;</span><br><span class="line">    <span class="keyword">if</span> (mid &gt;= L) </span><br><span class="line">        ans = <span class="built_in">judgemax</span>(<span class="built_in">ls</span>(id), L, R);</span><br><span class="line">    <span class="keyword">if</span> (mid + <span class="number">1</span> &lt;= R) </span><br><span class="line">        ans = <span class="built_in">max</span>(ans, <span class="built_in">judgemax</span>(<span class="built_in">rs</span>(id), L, R));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//计算右边界的下一个地址</span></span><br><span class="line"><span class="function">string <span class="title">next</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    string result = s;</span><br><span class="line">    <span class="type">bool</span> carry = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = s.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">&#x27;f&#x27;</span> &amp;&amp; carry)</span><br><span class="line">            result[i] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">            result[i] = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            carry = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            result[i] = s[i] + <span class="number">1</span>;</span><br><span class="line">            carry = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= q; i++) &#123;</span><br><span class="line">		cin &gt;&gt; act[i].op;</span><br><span class="line">		<span class="keyword">if</span> (act[i].op == <span class="number">1</span>) &#123;</span><br><span class="line">			cin &gt;&gt; act[i].id &gt;&gt; act[i].l &gt;&gt; act[i].r;</span><br><span class="line">			saveadds.<span class="built_in">push_back</span>(act[i].l);</span><br><span class="line">			saveadds.<span class="built_in">push_back</span>(act[i].r);</span><br><span class="line">			saveadds.<span class="built_in">push_back</span>(<span class="built_in">next</span>(act[i].r));</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (act[i].op == <span class="number">2</span>) &#123;</span><br><span class="line">            cin &gt;&gt; act[i].l;</span><br><span class="line">            saveadds.<span class="built_in">push_back</span>(act[i].l);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            cin &gt;&gt; act[i].l &gt;&gt; act[i].r;</span><br><span class="line">            saveadds.<span class="built_in">push_back</span>(act[i].l);</span><br><span class="line">            saveadds.<span class="built_in">push_back</span>(act[i].r);</span><br><span class="line">            saveadds.<span class="built_in">push_back</span>(<span class="built_in">next</span>(act[i].r));</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">sort</span>(saveadds.<span class="built_in">begin</span>(), saveadds.<span class="built_in">end</span>());</span><br><span class="line">    <span class="comment">//去除数组中的重复元素</span></span><br><span class="line">    vector&lt;string&gt; unique_values;  <span class="comment">// 用于存储去重后的唯一元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; saveadds.<span class="built_in">size</span>(); i++)</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> || saveadds[i] != saveadds[i - <span class="number">1</span>])</span><br><span class="line">            unique_values.<span class="built_in">push_back</span>(saveadds[i]);</span><br><span class="line">    saveadds = unique_values;  <span class="comment">// 将原容器替换为去重后的结果</span></span><br><span class="line">    <span class="comment">//建树</span></span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, saveadds.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= q; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (act[i].op == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="type">int</span> ll = <span class="built_in">find</span>(act[i].l), rr = <span class="built_in">find</span>(act[i].r);</span><br><span class="line">            <span class="comment">//该地址全部未被分配</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">judgemin</span>(<span class="number">1</span>, ll, rr) == ini) &#123;   </span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">                <span class="built_in">update</span>(<span class="number">1</span>, ll, rr, act[i].id);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//该地址是否只分配给了一个人 </span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">judgemin</span>(<span class="number">1</span>, ll, rr) == act[i].id &amp;&amp; <span class="built_in">judgemax</span>(<span class="number">1</span>, ll, rr) == act[i].id) &#123;</span><br><span class="line">                <span class="comment">//该地址本来就已经全部分配给了id </span></span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">judgesum</span>(<span class="number">1</span>, ll, rr) == (rr - ll + <span class="number">1</span>))</span><br><span class="line">                    cout &lt;&lt; <span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    cout &lt;&lt; <span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">                    <span class="built_in">update</span>(<span class="number">1</span>, ll, rr, act[i].id);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//该地址分配给了其他人</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (act[i].op == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="type">int</span> ll = <span class="built_in">find</span>(act[i].l);</span><br><span class="line">            <span class="type">int</span> t = <span class="built_in">judgemax</span>(<span class="number">1</span>, ll, ll);</span><br><span class="line">            <span class="keyword">if</span> (t != -ini)</span><br><span class="line">                cout &lt;&lt; t &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;0\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> ll = <span class="built_in">find</span>(act[i].l), rr = <span class="built_in">find</span>(act[i].r);</span><br><span class="line">            <span class="type">int</span> id = <span class="built_in">judgemin</span>(<span class="number">1</span>, ll, rr);</span><br><span class="line">            <span class="comment">//该地址是否只分配给了一个人 </span></span><br><span class="line">            <span class="keyword">if</span> (id == <span class="built_in">judgemax</span>(<span class="number">1</span>, ll, rr) &amp;&amp; <span class="built_in">judgesum</span>(<span class="number">1</span>, ll, rr) == (rr - ll + <span class="number">1</span>))</span><br><span class="line">                cout &lt;&lt; id &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;0\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-            
+                            
+
+                              
+                                <div class="page-reward">
+                                  <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                    <div class="tooltip tooltip-east">
+                                      <span class="tooltip-item">
+                                        赏
+                                      </span>
+                                      <span class="tooltip-content">
+                                        <span class="tooltip-text">
+                                          <span class="tooltip-inner">
+                                            <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                              谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                            </p>
+                                            <div class="reward-box">
+                                              
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/img/pay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                                  
+                                                    <div class="reward-box-item">
+                                                      <img class="reward-img" src="/img/weixin.png">
+                                                      <span class="reward-type">微信</span>
+                                                    </div>
+                                                    
+                                            </div>
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </a>
+                                </div>
+                                
+                                  
         </div>
         <div class="article-info article-info-index">
           
               
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CCFCSP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                 
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/CCFCSP题解//" class="article-tag-list-link color4">CCFCSP题解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
                   
 
@@ -265,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/08/14/%E7%AC%AC29%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,6 +383,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第21次CCFCSP题4解题报告</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
       <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -291,11 +407,34 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#202303-4-%E6%98%9F%E9%99%85%E7%BD%91%E7%BB%9C-II"><span class="toc-number">1.</span> <span class="toc-text">202303-4 星际网络 II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目描述：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">题解：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
         
+          
+
+                
+
+                      
+
+                            
+
+                                
+                                      
           </div>
         </div>
       </div>
@@ -316,7 +455,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tags | William&#39;s Blog</title>
+  <title>第21次CCFCSP题4解题报告 | William&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My baby blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="本次报告撰写人：WilliamZH题目：202012-4，第21次CCFCSP使用语言：C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第21次CCFCSP题4解题报告">
+<meta property="og:url" content="http://example.com/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="William&#39;s Blog">
-<meta property="og:description" content="My baby blog">
+<meta property="og:description" content="本次报告撰写人：WilliamZH题目：202012-4，第21次CCFCSP使用语言：C++">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-14T08:51:53.000Z">
-<meta property="article:modified_time" content="2024-08-14T09:28:31.093Z">
+<meta property="og:image" content="http://example.com/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/Pasted%20image%2020230621170621.png">
+<meta property="article:published_time" content="2024-08-14T13:43:09.000Z">
+<meta property="article:modified_time" content="2024-08-14T13:49:34.632Z">
 <meta property="article:author" content="William">
+<meta property="article:tag" content="CCFCSP">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/Pasted%20image%2020230621170621.png">
   
     <link rel="alternative" href="/atom.xml" title="William&#39;s Blog" type="application/atom+xml">
   
@@ -176,46 +180,126 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="tags-"
-  class="article article-type-tags " itemscope itemprop="blogPost">
+            <article id="post-第21次CCFCSP题4解题报告"
+  class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      第21次CCFCSP题4解题报告
     </h1>
   
 
           <!--显示阅读次数-->
           
+            <br />
+            <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+              </span>
+            </a>
+            
               <!--显示阅读次数完毕-->
               
-                <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2024-08-14T08:51:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-14</time>
+                <a href="/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" class="archive-article-date">
+  	<time datetime="2024-08-14T13:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-14</time>
 </a>
                   
       </header>
       
         <div class="article-entry" itemprop="articleBody">
           
-            <div class="tag-cloud">
-              <div class="tag-cloud-title">
-                <h3>共计&nbsp;5&nbsp;个标签</h3>
-              </div>
+                
+                          <p>本次报告撰写人：WilliamZH<br>题目：202012-4，第21次CCFCSP<br>使用语言：C++</p>
+<span id="more"></span>
 
-              <div class="tag-cloud-tags">
-                <a href="/tags/CCFCSP/" style="font-size: 30px; color: #111">CCFCSP</a> <a href="/tags/Linux/" style="font-size: 21px; color: #6f6f6f">Linux</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 30px; color: #111">算法</a>
-              </div>
-            </div>
+<h1 id="202012-4-食材运输"><a href="#202012-4-食材运输" class="headerlink" title="202012-4 食材运输"></a>202012-4 食材运输</h1><h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>$N$ 个酒店，由 $N-1$ 条双向道路构成一棵树，不同道路对应不同通行时间。<br>$K$ 种食材对应 $K$ 辆车，$M$ 个检查点作为车辆起点。<br>求所有酒店的等待时间的最大值的最小值。<br>输入格式：<br>第一行 $N,M,K$；接下来 $N$ 行，每行 $K$ 个数（$1$ 表示需要对应食材，$0$ 表示不需要）；接下来 $N-1$ 行，每行 $3$ 个整数 $u,v,w$（通行时间为 $w$ 的双向道路连接 $u$ 和 $v$）。<br>输出格式：<br>输出一个整数，表示在你的方案中，所有酒店的等待时间的最大值。<br>$N\leq10^2,M\leq K\leq10$.</p>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>主要思路：先预处理所有数据，然后进行动态规划，最后二分查找来尝试不同的时间（通过时间选择方案）</p>
+<ol>
+<li>存储所有数据：<br>用位图表示来处理各个酒店所需要的食材，用 $01$ 表示各食材的需求情况：第 $i$ 位表示对第 $i$ 号食材的需求（$1$ 表示需要，$0$ 则不需要），从而将所有食材压缩到一个整数上，该整数表示该点对所有食材的需求情况。<br>对于每个节点存储的信息（指向酒店 $v$，与 $v$ 之间道路时长 $w$），通过 $vector$ 结构进行添加信息，因为是双向道路，所以需要同时对 $u，v$ 都进行添加。</li>
+<li>$intitial$ 函数部分：<br>计算从酒店 $i$ 出发，配送食材 $j$ 的最大等待时间。<br>在进行 $dfs$ 之前，用 $bool$ 数组标记出哪些酒店需要该食材；需要注意的是，在 $dfs$ 中，某些必经点（下图的蓝色节点）也要标记出来。（每个标记循环前需要将该数组置零）<br>$dfs$ 部分：提供当前酒店号 $u$，和来源酒店号 $pre$。（当前节点和上一个节点）<br><strong>求解最大等待时间算法解释：</strong><br>其实只分为两种情况：<br><img src="/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/Pasted%20image%2020230621170621.png"><ol>
+<li>该节点 $\to$ 不需要食材的节点（蓝色路径） $\to$ 需要食材的节点（黑色路径）</li>
+<li>该节点 $\to$ 需要食材的节点 （黑色路径）<br>则总路径应为其中一条子路径走一次，其余子路径去并返回。即 $maxtime&#x3D;onetime*2-maxn$，其中 $onetime$ 表示全部的单程路径，$maxn$ 表示途中红色的最长的路径。</li>
+</ol>
+</li>
+<li>$work$ 函数部分：<ol>
+<li>$M&#x3D;&#x3D;K$<br>先遍历各食材最小解，从最小解里选出最大值。</li>
+<li>$M&lt;K$<br><strong>备忘录 dp+二分查找</strong><br>用位图标记某酒店是否适合配送每一个食材（时长&lt;mid 表示适合）<br><strong>dp 方程</strong>：<br>第 j 个检查点的配送情况&#x3D;第 $j-1$ 个检查点情况叠加酒店 i 的配送情况</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> N, M, K;</span><br><span class="line"><span class="type">int</span> foodbit[<span class="number">101</span>];			<span class="comment">//位图表示</span></span><br><span class="line"><span class="type">int</span> waitmax[<span class="number">101</span>][<span class="number">11</span>];		<span class="comment">//记录从酒店i出发配送食材j的最大等待时间</span></span><br><span class="line"><span class="type">bool</span> passneed[<span class="number">101</span>];			<span class="comment">//标记是否需要经过该酒店</span></span><br><span class="line"><span class="type">int</span> onetime;				<span class="comment">//配送所有酒店的单程时间</span></span><br><span class="line"><span class="type">int</span> maxnn = <span class="number">0</span>, minnn = <span class="number">0</span>;	<span class="comment">//记录二分时的左右边界</span></span><br><span class="line"><span class="type">bool</span> dp[<span class="number">11</span>][<span class="number">1</span> &lt;&lt; <span class="number">10</span>];		<span class="comment">//表示是否可送达K种食材的配送组合</span></span><br><span class="line"><span class="type">int</span> flag[<span class="number">101</span>];				<span class="comment">//位图标记某酒店是否适合配送每一个食材</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> v, w;</span><br><span class="line">    <span class="built_in">node</span>(<span class="type">int</span> v, <span class="type">int</span> w):<span class="built_in">v</span>(v),<span class="built_in">w</span>(w)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;node&gt; map[<span class="number">101</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> pre)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//深度优先遍历u为顶点的所有路径</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; x : map[u]) &#123;</span><br><span class="line">        <span class="type">int</span> v = x.v;</span><br><span class="line">        <span class="type">int</span> w = x.w;</span><br><span class="line">        <span class="keyword">if</span> (v == pre)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="type">int</span> re = <span class="built_in">dfs</span>(v, u);</span><br><span class="line">        <span class="comment">//处理必经点（不需要食材但子节点需要且必经过该节点）</span></span><br><span class="line">        <span class="keyword">if</span> (passneed[v]) &#123;</span><br><span class="line">            passneed[u] = <span class="literal">true</span>;</span><br><span class="line">            onetime += w;</span><br><span class="line">            ret = <span class="built_in">max</span>(ret, re + w);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initial</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; K; j++) &#123;</span><br><span class="line">            <span class="comment">//事先标记</span></span><br><span class="line">            <span class="built_in">memset</span>(passneed, <span class="number">0</span>, <span class="built_in">sizeof</span>(passneed));</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= N; k++)</span><br><span class="line">                <span class="keyword">if</span> (foodbit[k] &gt;&gt; j &amp; <span class="number">1</span>)</span><br><span class="line">                    passneed[k] = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">//初始化单程时间</span></span><br><span class="line">            onetime = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//从第i个酒店开始的情况下，找到最长的路径</span></span><br><span class="line">            <span class="type">int</span> maxn = <span class="built_in">dfs</span>(i, <span class="number">-1</span>);</span><br><span class="line">            <span class="comment">//其他路径去并返回，最长路径只走一次不返回</span></span><br><span class="line">            waitmax[i][j] = onetime * <span class="number">2</span> - maxn;</span><br><span class="line">            <span class="comment">//为二分查找的边界做准备</span></span><br><span class="line">            <span class="keyword">if</span> (waitmax[i][j] &gt; maxnn)</span><br><span class="line">                maxnn = waitmax[i][j];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (waitmax[i][j] &lt; minnn)</span><br><span class="line">                minnn = waitmax[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">judge</span><span class="params">(<span class="type">int</span> mid)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(flag, <span class="number">0</span>, <span class="built_in">sizeof</span>(flag));</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0</span>, <span class="built_in">sizeof</span>(dp));</span><br><span class="line">    <span class="comment">//位图标记酒店i是否适合配送食材j</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; K; j++)</span><br><span class="line">            <span class="keyword">if</span> (waitmax[i][j] &lt;= mid)</span><br><span class="line">                flag[i] |= <span class="number">1</span> &lt;&lt; j;</span><br><span class="line"></span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//遍历酒店，以酒店i为出发点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        <span class="comment">//遍历检查点，酒店i在j个检查点时的配送情况</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= M; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; (<span class="number">1</span> &lt;&lt; K); k++)</span><br><span class="line">                dp[j][k | flag[i]] |= dp[j - <span class="number">1</span>][k];</span><br><span class="line">        <span class="keyword">if</span> (dp[M][(<span class="number">1</span> &lt;&lt; K) - <span class="number">1</span>])</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[M][(<span class="number">1</span> &lt;&lt; K) - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (M == K) &#123;</span><br><span class="line">        <span class="type">int</span> ansmax = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; K; j++) &#123;</span><br><span class="line">            <span class="type">int</span> foodmin = maxnn;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">                <span class="keyword">if</span> (waitmax[i][j] &lt; foodmin)</span><br><span class="line">                    foodmin = waitmax[i][j];</span><br><span class="line">            ansmax = <span class="built_in">max</span>(ansmax, foodmin);</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ansmax &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> l = minnn, r = maxnn, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">judge</span>(mid)) &#123;</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">            ans = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="comment">//输入</span></span><br><span class="line">    cin &gt;&gt; N &gt;&gt; M &gt;&gt; K;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; K; j++) &#123;</span><br><span class="line">            <span class="type">int</span> temp;</span><br><span class="line">            cin &gt;&gt; temp;</span><br><span class="line">            <span class="keyword">if</span> (temp)</span><br><span class="line">                foodbit[i] |= (<span class="number">1</span> &lt;&lt; j);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="type">int</span> u, v, w;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        map[u].<span class="built_in">emplace_back</span>(v, w);</span><br><span class="line">        map[v].<span class="built_in">emplace_back</span>(u, w);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//预处理</span></span><br><span class="line">    <span class="built_in">initial</span>();</span><br><span class="line">    <span class="comment">//计算结果</span></span><br><span class="line">    <span class="built_in">work</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                            
 
-            
+                              
+                                <div class="page-reward">
+                                  <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                    <div class="tooltip tooltip-east">
+                                      <span class="tooltip-item">
+                                        赏
+                                      </span>
+                                      <span class="tooltip-content">
+                                        <span class="tooltip-text">
+                                          <span class="tooltip-inner">
+                                            <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                              谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                            </p>
+                                            <div class="reward-box">
+                                              
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/img/pay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                                  
+                                                    <div class="reward-box-item">
+                                                      <img class="reward-img" src="/img/weixin.png">
+                                                      <span class="reward-type">微信</span>
+                                                    </div>
+                                                    
+                                            </div>
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </a>
+                                </div>
+                                
+                                  
         </div>
         <div class="article-info article-info-index">
           
               
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CCFCSP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                 
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/CCFCSP题解//" class="article-tag-list-link color4">CCFCSP题解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
                   
 
@@ -265,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/08/14/%E7%AC%AC21%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,6 +361,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2024/08/14/%E7%AC%AC29%E6%AC%A1CCFCSP%E9%A2%984%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          第29次CCFCSP题4解题报告
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/08/14/%E7%AC%AC25%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第25次CCFCSP解题报告</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
       <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -291,11 +394,34 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#202012-4-%E9%A3%9F%E6%9D%90%E8%BF%90%E8%BE%93"><span class="toc-number">1.</span> <span class="toc-text">202012-4 食材运输</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目描述：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">题解：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
         
+          
+
+                
+
+                      
+
+                            
+
+                                
+                                      
           </div>
         </div>
       </div>
@@ -316,7 +442,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
