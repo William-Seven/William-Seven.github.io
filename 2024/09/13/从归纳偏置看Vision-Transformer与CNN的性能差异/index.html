@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2024/3 | WilliamZH&#39;s Blog</title>
+  <title>从归纳偏置看Vision Transformer与CNN的性能差异 | WilliamZH&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My baby blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WilliamZH&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/2024/03/index.html">
+  <meta name="description" content="在卷积神经网络（CNNs）中，归纳偏置 inductive biases是模型设计者预先引入的一种先验知识，它使模型能够更高效地从数据中学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从归纳偏置看Vision Transformer与CNN的性能差异">
+<meta property="og:url" content="http://example.com/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/index.html">
 <meta property="og:site_name" content="WilliamZH&#39;s Blog">
-<meta property="og:description" content="My baby blog">
+<meta property="og:description" content="在卷积神经网络（CNNs）中，归纳偏置 inductive biases是模型设计者预先引入的一种先验知识，它使模型能够更高效地从数据中学习。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/ViT.png">
+<meta property="article:published_time" content="2024-09-13T11:45:44.000Z">
+<meta property="article:modified_time" content="2024-09-13T12:01:57.414Z">
 <meta property="article:author" content="WilliamZH">
+<meta property="article:tag" content="CNNs">
+<meta property="article:tag" content="Vision Transformer">
+<meta property="article:tag" content="计算机视觉">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/ViT.png">
   
     <link rel="alternative" href="/atom.xml" title="WilliamZH&#39;s Blog" type="application/atom+xml">
   
@@ -176,126 +183,268 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-从归纳偏置看Vision-Transformer与CNN的性能差异"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/02/%E7%AC%AC23%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2024-03-02T12:40:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/03/02/%E7%AC%AC23%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">第23次CCFCSP解题报告</a>
+    <h1 class="article-title" itemprop="name">
+      从归纳偏置看Vision Transformer与CNN的性能差异
     </h1>
   
 
-        <div class="article-info info-on-right">
+
           
+            <a href="/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/" class="archive-article-date">
+  	<time datetime="2024-09-13T11:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-13</time>
+</a>
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> </span>
+            <span class="post-count">
+                1.2k字
+            </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 预计阅读时长: </span>
+            <span class="post-count">
+                4min
+            </span>
+        </span>
+    </span>
+</div>
+                  
+                    <!-- 添加完成 -->
+                    
+
+                      <!--显示阅读次数-->
+                      
+
+                        <span id="busuanzi_container_page_pv" style="color:#9763e9d8;font-size:14px;">
+                          阅读量: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+                        </span>
+
+                        
+                          <!--显示阅读次数完毕-->
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+                
+                          <p>在卷积神经网络（CNNs）中，<strong>归纳偏置 inductive biases</strong>是模型设计者预先引入的一种先验知识，它使模型能够更高效地从数据中学习。</p>
+<span id="more"></span>
+
+<h1 id="卷积神经网络中的归纳偏置"><a href="#卷积神经网络中的归纳偏置" class="headerlink" title="卷积神经网络中的归纳偏置"></a>卷积神经网络中的归纳偏置</h1><p>在卷积神经网络（CNNs）中，<strong>归纳偏置 inductive biases</strong>是模型设计者预先引入的一种先验知识，它使模型能够更高效地从数据中学习。<br>归纳偏置在 CNNs 中尤为重要，因为它们帮助模型捕捉到数据的特定结构，尤其是在图像数据中，这种偏置使得 CNNs 在相对较小的训练数据集上也能够取得不错的效果。</p>
+<p>在 CNNs 中，最常提到的两个归纳偏置是 <strong>locality 局部性</strong>和 <strong>translation equivariance 平移等变性</strong>。</p>
+<h2 id="1-局部性（Locality）"><a href="#1-局部性（Locality）" class="headerlink" title="1. 局部性（Locality）"></a>1. 局部性（Locality）</h2><p>CNNs 以<strong>滑动窗口</strong>的形式在图像上进行卷积操作，每次只关注图像的一小块区域。换句话说，CNN 假设图像中<strong>相邻像素之间有更高的相关性</strong>，因为在现实世界中，物体的局部特征往往在空间上紧密相邻。</p>
+<p>例如，当我们在一张图片上看到桌子时，桌子旁边很可能会出现椅子。<br>这种局部相关性让CNN通过观察相对较小的区域，提取出关键特征并进行分类。<br>这种特性非常适合图像中的<strong>边缘检测</strong>、<strong>形状提取</strong>等任务，也帮助 CNN 有效减少参数数量，避免过拟合。</p>
+<p>因此，<strong>局部性偏置</strong>使 CNNs 能够通过更少的计算资源来处理大量数据，同时保证良好的泛化能力。</p>
+<h2 id="2-平移等变性（Translation-Equivariance）"><a href="#2-平移等变性（Translation-Equivariance）" class="headerlink" title="2. 平移等变性（Translation Equivariance）"></a>2. 平移等变性（Translation Equivariance）</h2><p>平移等变性指的是<strong>卷积运算对图像平移操作保持不变</strong>。具体来说，如果我们对输入图像进行某种平移操作，卷积后的特征图将保持相同的模式，只是特征的位置发生了相应的变化。<br>这意味着，模型不需要重新学习图像在不同位置出现的同一特征。</p>
+<p>数学上可以这样描述：<br> $$<br> f(g(x))&#x3D;g(f(x))<br> $$<br>其中，$f$ 代表卷积运算，$g$ 代表平移操作。无论先做平移还是先做卷积，结果都是一样的。</p>
+<p>这种平移等变性赋予了 CNNs 对物体位置的<strong>鲁棒性</strong>，即不管物体位于图像的什么位置，模型都能识别出它的特征。<br>这与视觉系统在识别物体时的稳定性类似：无论物体在图像中移动到哪里，我们依然能认出它。这也是CNNs能在多种图像分类任务中表现优异的原因之一。</p>
+<h1 id="归纳偏置的优势：较少数据的高效学习"><a href="#归纳偏置的优势：较少数据的高效学习" class="headerlink" title="归纳偏置的优势：较少数据的高效学习"></a>归纳偏置的优势：较少数据的高效学习</h1><p>得益于 <strong>locality</strong> 和 <strong>translation equivariance</strong>，CNNs 能够通过相对较少的数据<strong>学习到有效的特征表示</strong>。CNN 将参数集中在局部区域，利用空间结构信息，大大降低了模型的自由度。这不仅减少了训练时所需的样本量，还提升了模型的泛化能力，使其能够处理复杂的图像任务。</p>
+<p><strong>举例来说</strong>，面对一个包含 1000 张猫的图片数据集，CNN 可以快速学会猫的耳朵、眼睛等局部特征，并且无论猫出现在图片的哪个角落，模型都能检测到这些特征。相比之下，如果使用没有这种归纳偏置的模型（比如全连接网络），模型需要看到更多的训练数据，才能够识别出相同的特征。</p>
+<h1 id="对比-Vision-Transformer"><a href="#对比-Vision-Transformer" class="headerlink" title="对比 Vision Transformer"></a>对比 Vision Transformer</h1><p>与 CNN 不同的是，Vision Transformer（ViT）并没有显式地引入这些归纳偏置。ViT 模型处理图片的方式是将图像分割成固定大小的 patch，然后将这些 patch 当作序列输入 Transformer。这种方法使得 ViT 具有更大的灵活性，但也缺少了对局部性和平移等变性的利用。因此，ViT 在较小的数据集上往往表现不如 CNN。<br><img src="/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/ViT.png"><br>ViT需要<strong>更多的数据</strong>来弥补这一缺陷。没有局部性和平移等变性，ViT 必须从头学习如何理解空间关系和位置信息，这就导致了在数据不足时性能会显著下降。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>归纳偏置在 CNN中 的应用使得这些模型可以在较少的数据上获得良好的效果，尤其是对于那些图像数据较为稀少或标注较为昂贵的任务。<strong>局部性</strong>和<strong>平移等变性</strong>帮助 CNN 高效地学习图像中的特征，并且在分类任务中表现优异。虽然 Vision Transformer 在大型数据集上的表现已经超越了 CNN，但在小型和中型数据集上，CNN 仍然具有优势。</p>
+
+                            
+
+                              
+                                <div class="page-reward">
+                                  <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                    <div class="tooltip tooltip-east">
+                                      <span class="tooltip-item">
+                                        赏
+                                      </span>
+                                      <span class="tooltip-content">
+                                        <span class="tooltip-text">
+                                          <span class="tooltip-inner">
+                                            <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                              谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                            </p>
+                                            <div class="reward-box">
+                                              
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/img/pay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                                  
+                                                    <div class="reward-box-item">
+                                                      <img class="reward-img" src="/img/weixin.png">
+                                                      <span class="reward-type">微信</span>
+                                                    </div>
+                                                    
+                                            </div>
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </a>
+                                </div>
+                                
+                                  
+        </div>
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CCFCSP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CNNs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vision Transformer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/CCFCSP题解//" class="article-tag-list-link color4">CCFCSP题解</a>
+        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+                  
+
+                      
+                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                          
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
+
   
+<nav id="article-nav">
+  
+  
+    <a href="/2024/08/29/curl%E7%9B%B4%E6%8E%A5%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86%E3%80%81%E8%AE%AD%E7%BB%83%E6%9D%83%E9%87%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">curl直接在服务器使用下载链接下载数据集、训练权重</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" class="archive-article-date">
-  	<time datetime="2024-03-01T11:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-01</time>
-</a>
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/">Linux执行Ctrl-z后出现[1]+Stopped</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">卷积神经网络中的归纳偏置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B1%80%E9%83%A8%E6%80%A7%EF%BC%88Locality%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1. 局部性（Locality）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B9%B3%E7%A7%BB%E7%AD%89%E5%8F%98%E6%80%A7%EF%BC%88Translation-Equivariance%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. 平移等变性（Translation Equivariance）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9A%84%E4%BC%98%E5%8A%BF%EF%BC%9A%E8%BE%83%E5%B0%91%E6%95%B0%E6%8D%AE%E7%9A%84%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">归纳偏置的优势：较少数据的高效学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94-Vision-Transformer"><span class="toc-number">3.</span> <span class="toc-text">对比 Vision Transformer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">结论</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
+        
+    </div>
+</aside>
 
 
+        
+          
+
+                
+
+                      
+
+                            
+
+                                
+                                      
           </div>
         </div>
       </div>
@@ -323,8 +472,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-			isArchive: true,
+		isPost: true,
+			isArchive: false,
 				isTag: false,
 					isCategory: false,
 						open_in_new: false,
