@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: hexo | WilliamZH&#39;s Blog</title>
+  <title>自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析 | WilliamZH&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My baby blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WilliamZH&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/hexo/index.html">
+  <meta name="description" content="本篇笔记解析了论文《Abductive Ego-View Accident Video Understanding for Safe Driving Perception》的核心内容，重点介绍了自驾车事故视频理解领域的最新进展，包括 MM-AU 数据集的构建、基于 AdVersa-SD 框架的事故原因推理方法，以及如何利用视频与文本的多模态数据，推断和预测潜在事故。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析">
+<meta property="og:url" content="http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="WilliamZH&#39;s Blog">
-<meta property="og:description" content="My baby blog">
+<meta property="og:description" content="本篇笔记解析了论文《Abductive Ego-View Accident Video Understanding for Safe Driving Perception》的核心内容，重点介绍了自驾车事故视频理解领域的最新进展，包括 MM-AU 数据集的构建、基于 AdVersa-SD 框架的事故原因推理方法，以及如何利用视频与文本的多模态数据，推断和预测潜在事故。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/%E6%91%98%E8%A6%81.png">
+<meta property="og:image" content="http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/introduction1.png">
+<meta property="og:image" content="http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/%E6%AD%A3%E8%B4%9F%E5%AF%B9.png">
+<meta property="article:published_time" content="2024-10-27T11:22:19.000Z">
+<meta property="article:modified_time" content="2024-10-27T11:34:22.758Z">
 <meta property="article:author" content="WilliamZH">
+<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="视频理解">
+<meta property="article:tag" content="多模态">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/%E6%91%98%E8%A6%81.png">
   
     <link rel="alternative" href="/atom.xml" title="WilliamZH&#39;s Blog" type="application/atom+xml">
   
@@ -176,73 +185,422 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/29/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Ahexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2023-11-29T07:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/29/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Ahexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">三步学会hexo文章插入图片</a>
+    <h1 class="article-title" itemprop="name">
+      自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析
     </h1>
   
 
-        <div class="article-info info-on-right">
+
           
+            <a href="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2024-10-27T11:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-27</time>
+</a>
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> </span>
+            <span class="post-count">
+                3.2k字
+            </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 预计阅读时长: </span>
+            <span class="post-count">
+                10min
+            </span>
+        </span>
+    </span>
+</div>
+                  
+                    <!-- 添加完成 -->
+                    
+
+                      <!--显示阅读次数-->
+                      
+
+                        <span id="busuanzi_container_page_pv" style="color:#9763e9d8;font-size:14px;">
+                          阅读量: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+                        </span>
+
+                        
+                          <!--显示阅读次数完毕-->
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+                
+                          <p>本篇笔记解析了论文<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2403.00436">《Abductive Ego-View Accident Video Understanding for Safe Driving Perception》</a>的核心内容，重点介绍了自驾车事故视频理解领域的最新进展，包括 MM-AU 数据集的构建、基于 AdVersa-SD 框架的事故原因推理方法，以及如何利用视频与文本的多模态数据，推断和预测潜在事故。</p>
+<span id="more"></span>
+
+<h1 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h1><ol>
+<li><strong>MM-AU数据集</strong><br>用于多模态交通事故视频理解的大规模数据集, 包含11,727段现实中的自驾车事故视频</li>
+<li><strong>AdVersa-SD框架</strong><br>通过视频扩散（Video Diffusion）进行事故推理理解的框架，使用CLIP模型进行多模态对比学习，关注事故的因果关系</li>
+<li><strong>OAVD方法</strong><br>Object-Centric Accident Video Diffusion。一种基于物体中心的视频生成方法，通过保持视频背景的稳定性，重点学习事故因果区域，识别事故的关键原因和预防措施。</li>
+</ol>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><ul>
+<li>通过对比交互损失，学习<strong>正常、事故将发生、事故发生帧</strong>与相应文本描述之间的关系。<blockquote>
+<p><img src="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/%E6%91%98%E8%A6%81.png"></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><ul>
+<li>提出 <strong>MM-AU</strong>和<strong>AdVersa-SD</strong>的背景</li>
+<li><strong>MM-AU数据集</strong><br>8 种交通事故视频理解任务<ul>
+<li>事故涉及的物体</li>
+<li>事故类型</li>
+<li>事故发生地点</li>
+<li>事故发生时间</li>
+<li>事故发生原因</li>
+<li>关键的事故原因</li>
+<li>如何预防事故</li>
+<li>多模态事故视频扩散<br><img src="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/introduction1.png"></li>
+</ul>
+</li>
+<li><strong>AdVersa-SD框架</strong><br><strong>特点</strong>：该框架通过推理型CLIP模型和视频扩散技术，尝试通过视频和文本的共现关系学习事故的因果链。<br><strong>关键技术</strong>：<ul>
+<li>使用对比交互损失函数学习事故原因和事故类别的语义共现关系。</li>
+<li>通过物体中心扩散模型（OAVD），保持视频生成时背景的稳定，重点学习事故发生的因果区域。</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h1><h2 id="2-1-Ego-View-Accident-Video-Understanding"><a href="#2-1-Ego-View-Accident-Video-Understanding" class="headerlink" title="2.1. Ego-View Accident Video Understanding"></a>2.1. Ego-View Accident Video Understanding</h2><ul>
+<li><strong>事故检测</strong>：<ul>
+<li>目标：识别事故发生的具体<strong>空间区域</strong>和<strong>时间帧</strong>。</li>
+<li><strong>主要挑战</strong>：参与者（如车辆、行人等）的形状、位置和关系急剧变化，需要鲁棒的特征提取来应对这些复杂性。</li>
+<li><strong>常用方法</strong>：无监督学习，通过帧一致性、位置一致性和场景上下文一致性等模型，预测事故窗口。</li>
+</ul>
+</li>
+<li><strong>事故预警</strong>：<ul>
+<li>目标：预测未来可能发生的事故，提供<strong>早期预警</strong>。</li>
+<li><strong>主要方法</strong>：基于时间一致性关联参与者轨迹，利用<strong>深度强化学习</strong>模型来提高预警的准确性和解释性。</li>
+</ul>
+</li>
+<li><strong>事故分类</strong>：<ul>
+<li>问题：由于事故类别视频数据的局限性，基于自驾车视角的事故分类研究较少。</li>
+<li><strong>方法</strong>：例如<strong>ViT-TA模型</strong>通过注意力图来突出事故视频中的关键物体，增强分类的可靠性。</li>
+</ul>
+</li>
+<li><strong>事故原因回答</strong>：<ul>
+<li>相关工作：通过<strong>因果识别</strong>模型来推断事故发生的原因，并通过问答系统提出预防建议。</li>
+<li><strong>挑战</strong>：当前的问答框架没有明确验证哪些<strong>关键动作或物体</strong>是导致事故的主要原因，缺乏双重验证机制。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-Ego-View-Accident-Understanding-Datasets"><a href="#2-2-Ego-View-Accident-Understanding-Datasets" class="headerlink" title="2.2. Ego-View Accident Understanding Datasets"></a>2.2. Ego-View Accident Understanding Datasets</h2><ul>
+<li><strong>现有数据集概述</strong>：<ul>
+<li><strong>DAD数据集</strong>：第一个自驾车视角事故视频数据集，重点是视频片段中的事故结尾部分（最后10帧）。</li>
+<li><strong>CCD数据集</strong>：与DAD类似，每个片段包含50帧。</li>
+<li><strong>A3D和DoTA数据集</strong>：主要用于<strong>无监督学习</strong>的事故检测任务。</li>
+<li><strong>DADA-2000数据集</strong>：除了视频，还标注了驾驶员的注意力信息，丰富了事故理解的维度。</li>
+</ul>
+</li>
+<li><strong>虚拟事故视频的生成</strong>：<ul>
+<li>由于真实世界中很难获取大量的事故视频，研究人员利用模拟工具生成虚拟的事故视频。</li>
+<li>例如，<strong>GTACrash</strong>、<strong>VIENA2</strong>、<strong>DeepAccident</strong>等数据集使用了虚拟事故视频或物体轨迹。</li>
+<li><strong>挑战</strong>：<strong>真实与模拟数据的领域差距</strong>是一个难点，因为模拟工具难以精确模拟现实中的事故过程。</li>
+</ul>
+</li>
+<li><strong>现有数据集的局限性</strong>：<ul>
+<li>大多数数据集主要集中在视觉数据上，缺乏详细的文本描述。</li>
+<li>只有少数数据集，如<strong>CTA</strong>，尝试探索更丰富的模态信息，但仍有提升空间。</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-MM-AU-Dataset"><a href="#3-MM-AU-Dataset" class="headerlink" title="3. MM-AU Dataset"></a>3. MM-AU Dataset</h1><ul>
+<li><strong>数据集来源</strong>：<ul>
+<li><strong>MM-AU</strong>收集自多个公开的自驾车视角数据集，如CCD、A3D、DoTA和DADA-2000，还包括来自流媒体网站（YouTube、Bilibili和腾讯）的视频。</li>
+<li>覆盖多种天气条件和场景，包含了2,195,613帧，成为迄今为止最大且最细粒度的自驾车视角多模态事故数据集。</li>
+</ul>
+</li>
+<li><strong>标注过程</strong>：<ul>
+<li><strong>事故窗口标注</strong>：通过平均确定事故的开始和结束时间，并将视频按时间窗口划分，这有助于模型的事故理解训练。</li>
+<li><strong>物体检测标注</strong>：为7类道路参与者提供了精细和粗略的物体边界框标注，使用YOLOX进行初步检测，手动调整获得准确标注。</li>
+<li><strong>文本描述标注</strong>：MM-AU特别标注了三类文本描述：事故原因、预防建议和事故类别。这些文本与视频中的事故窗口对齐，并设计了多选的<strong>事故原因回答（ArA）</strong>任务，帮助模型理解事故的原因。</li>
+</ul>
+</li>
+<li><strong>任务设计与挑战</strong>：<ul>
+<li><strong>事故原因回答任务</strong>：设计了一个问答框架，针对每个视频的事故原因提供问题和干扰项，要求模型识别正确答案。</li>
+<li><strong>复杂的标注与数据量</strong>：MM-AU提供了大量精细标注，这对事故原因分析和自动驾驶安全理解提出了更高的要求和可能性。</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-AdVersa-SD"><a href="#4-AdVersa-SD" class="headerlink" title="4. AdVersa-SD"></a>4. AdVersa-SD</h1><h2 id="4-1-Abductive-CLIP"><a href="#4-1-Abductive-CLIP" class="headerlink" title="4.1. Abductive CLIP"></a>4.1. Abductive CLIP</h2><ul>
+<li><strong>推理型CLIP的设计目的</strong>：<ul>
+<li>该模型旨在学习文本描述与视频片段之间的语义一致性，特别是在不同类型的文本-视频共现对中，如正常视频片段与反义文本、接近事故的视频片段与预防建议的配对。</li>
+</ul>
+</li>
+<li><strong>虚拟共现对的生成</strong>：<ul>
+<li>通过<strong>反义动词</strong>的加入生成反义文本描述（例如将“发生事故”变为“未发生事故”），并通过帧反转生成接近事故的反序视频，作为虚拟共现对的一部分。</li>
+<li>每个视频片段与文本描述随机匹配16帧进行训练，以增强模型的适应性。</li>
+</ul>
+</li>
+<li><strong>对比交互损失（CILoss）</strong>：<ul>
+<li>核心思想是通过计算正共现对和负共现对之间的相似性差异，来增强正确匹配的文本-视频对的嵌入一致性。</li>
+<li><strong>目标</strong>：最大化文本描述与正确视频帧的语义一致性，同时最小化它们与错误视频帧或描述的相似度。</li>
+</ul>
+</li>
+<li><strong>优化过程</strong>：<ul>
+<li>模型通过最小化四种不同类型的对比交互损失（如正共现对和负共现对的不同组合）来完成优化，从而确保模型对不同文本-视频配对的准确学习。</li>
+</ul>
+</li>
+</ul>
+<h3 id="正共现对和负共现对详解"><a href="#正共现对和负共现对详解" class="headerlink" title="正共现对和负共现对详解"></a>正共现对和负共现对详解</h3><p><img src="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/%E6%AD%A3%E8%B4%9F%E5%AF%B9.png"></p>
+<h4 id="正共现对（Pos-CoCPs）和负共现对（Neg-CoCPs）的组成"><a href="#正共现对（Pos-CoCPs）和负共现对（Neg-CoCPs）的组成" class="headerlink" title="正共现对（Pos. CoCPs）和负共现对（Neg. CoCPs）的组成"></a>正共现对（Pos. CoCPs）和负共现对（Neg. CoCPs）的组成</h4><ul>
+<li><strong>正共现对（Pos. CoCPs）</strong>：<br>  正共现对指的是<strong>视频片段和相应文本描述的正确配对</strong>。举例来说，如果我们有一段接近事故的视频片段 <strong>(Vr)<strong>，其正确的文本描述是 <strong>“事故原因”（tr）</strong>，那么这个配对 <strong>(Vr, tr)</strong> 就是一个正共现对。同样地，</strong>事故发生视频片段</strong>（Va）与 <strong>事故类别描述</strong>（ta）的配对也属于正共现对。<br>  正共现对的目标是让模型学习到视频片段和它的<strong>正确描述</strong>之间的语义一致性。</li>
+<li><strong>负共现对（Neg. CoCPs）</strong>：<br>  负共现对指的是<strong>视频片段和错误文本描述的配对</strong>。为了生成负共现对，模型会将视频片段与<strong>不相关的描述</strong>进行配对。例如，将正常视频片段 <strong>(Vo)</strong> 与一个 <strong>错误的事故类别描述</strong>（反义的t̃a，比如“没有发生事故”）配对，或将接近事故的反转视频片段 <strong>(Ṽr)</strong> 与<strong>不相关的预防建议</strong>配对，都是负共现对。<br>  负共现对的目标是让模型通过学习区分正确和错误的配对，从而减少视频片段与<strong>错误描述</strong>之间的相似性。</li>
+</ul>
+<h4 id="正共现对和负共现对在模型中的优化作用："><a href="#正共现对和负共现对在模型中的优化作用：" class="headerlink" title="正共现对和负共现对在模型中的优化作用："></a>正共现对和负共现对在模型中的优化作用：</h4><p>模型的优化目标是<strong>增强正共现对之间的相似性</strong>，同时<strong>减小负共现对之间的相似性</strong>。具体来说，模型通过<strong>对比交互损失（CILoss）</strong> 来实现这种优化。</p>
+<ul>
+<li><strong>正共现对的作用</strong>：<br>  当输入正共现对（例如 <strong>(Vr, tr)</strong> 或 <strong>(Va, ta)<strong>）时，模型会计算视频片段和文本描述之间的嵌入相似度（</strong>E(zv, zt)<strong>，zv是视频片段的嵌入，zt是文本描述的嵌入）。模型的目标是</strong>最大化正共现对的相似度</strong>，让它们的嵌入尽可能接近。换句话说，模型会学习视频中的视觉信息（如事故的场景、物体动作）如何与文本描述的语义相符。</li>
+<li><strong>负共现对的作用</strong>：<br>  对于负共现对（例如 <strong>(Vo, t̃a)</strong> 或 <strong>(Ṽr, tp)<strong>），模型也会计算视频和文本描述之间的相似度，但目标是</strong>最小化负共现对的相似度</strong>，即让错误配对的视频片段与描述的嵌入距离尽可能远。这样，模型就能学会识别并“排斥”错误的文本-视频配对。</li>
+</ul>
+<h4 id="如何通过正共现对和负共现对优化模型："><a href="#如何通过正共现对和负共现对优化模型：" class="headerlink" title="如何通过正共现对和负共现对优化模型："></a>如何通过正共现对和负共现对优化模型：</h4><p>通过同时输入<strong>正共现对和负共现对</strong>，模型会在训练过程中进行<strong>对比学习</strong>，目标是：</p>
+<ol>
+<li><strong>增加正共现对的相似度</strong>：通过学习正确的视频片段与其文本描述的特征，使它们的嵌入表示更加接近。</li>
+<li><strong>减少负共现对的相似度</strong>：通过对比负共现对，使错误的文本描述与视频片段的嵌入之间保持较大距离，从而区分出哪些是错误的配对。</li>
+</ol>
+<h2 id="4-2-Extension-to-Accident-Video-Diffusion"><a href="#4-2-Extension-to-Accident-Video-Diffusion" class="headerlink" title="4.2. Extension to Accident Video Diffusion"></a>4.2. Extension to Accident Video Diffusion</h2><ul>
+<li><strong>事故视频扩散的目标</strong>：<ul>
+<li>通过视频扩散模型显式地探索交通事故的<strong>因果关系</strong>。因为事故往往由道路参与者的不规则运动导致，模型需要具备物体级别的表示能力，以实现细致的事故分析。</li>
+</ul>
+</li>
+<li><strong>以物体为中心的事故视频扩散模型（OAVD）</strong>：<ul>
+<li>OAVD基于<strong>潜在扩散模型（LDM）</strong>，通过在视频帧的潜在表示上添加噪声，再进行去噪生成事故视频。</li>
+<li>其核心是<strong>3D U-Net</strong>，包括空间、时间和文本-视频的注意力机制，确保模型能够捕捉到事故视频中的关键物体位置和时间序列信息。</li>
+</ul>
+</li>
+<li><strong>遮罩视频帧扩散</strong>：<ul>
+<li>通过前向添加噪声和反向去噪，模型在视频生成过程中固定背景细节，重点处理物体区域，从而生成以物体为中心的事故视频。</li>
+<li>这个过程包括均方误差和遮罩重建的联合损失，用于优化视频的生成质量。</li>
+</ul>
+</li>
+<li><strong>门控边界框表示（Gated Bbox Representation）</strong>：<ul>
+<li>边界框（Bbox）与文本描述协同工作，增强对因果物体区域的学习。通过门控自注意力机制，模型能够明确分析特定物体在事故中的角色。</li>
+</ul>
+</li>
+<li><strong>推理阶段</strong>：<ul>
+<li>在推理阶段，输入文本和视频共现对（Co-CPs），通过3D U-Net和去噪扩散模型生成新的事故视频片段。</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-实验"><a href="#5-实验" class="headerlink" title="5. 实验"></a>5. 实验</h1><h2 id="5-1-实验细节"><a href="#5-1-实验细节" class="headerlink" title="5.1 实验细节"></a>5.1 实验细节</h2><ul>
+<li><strong>OD任务</strong>：<ul>
+<li>使用了11种最先进的物体检测器，重点评估物体边界框检测的精度和召回率。</li>
+<li>通过不同的版本（V1-Train和V2-Train）来比较事故帧和非事故帧的检测效果。</li>
+</ul>
+</li>
+<li><strong>ArA任务</strong>：<ul>
+<li>基于多选问题的问答任务，问题是“事故原因是什么”，通过准确率来评估模型的表现。</li>
+</ul>
+</li>
+<li><strong>推理型视频扩散任务</strong>：<ul>
+<li>通过输入物体边界框和文本描述，评估模型生成事故视频的能力。</li>
+<li>使用FVD评估视频质量，CLIP分数衡量生成的视频与文本描述的对齐程度。</li>
+</ul>
+</li>
+</ul>
+
+                            
+
+                              
+                                <div class="page-reward">
+                                  <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                    <div class="tooltip tooltip-east">
+                                      <span class="tooltip-item">
+                                        赏
+                                      </span>
+                                      <span class="tooltip-content">
+                                        <span class="tooltip-text">
+                                          <span class="tooltip-inner">
+                                            <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                              谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                            </p>
+                                            <div class="reward-box">
+                                              
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/img/pay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                                  
+                                                    <div class="reward-box-item">
+                                                      <img class="reward-img" src="/img/weixin.png">
+                                                      <span class="reward-type">微信</span>
+                                                    </div>
+                                                    
+                                            </div>
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </a>
+                                </div>
+                                
+                                  
+        </div>
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频理解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+                  
+
+                      
+                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                          
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2024/09/13/%E4%BB%8E%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE%E7%9C%8BVision-Transformer%E4%B8%8ECNN%E7%9A%84%E6%80%A7%E8%83%BD%E5%B7%AE%E5%BC%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从归纳偏置看Vision Transformer与CNN的性能差异</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
     
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">2.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">3.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">4.</span> <span class="toc-text">2. Related Work</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Ego-View-Accident-Video-Understanding"><span class="toc-number">4.1.</span> <span class="toc-text">2.1. Ego-View Accident Video Understanding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Ego-View-Accident-Understanding-Datasets"><span class="toc-number">4.2.</span> <span class="toc-text">2.2. Ego-View Accident Understanding Datasets</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-MM-AU-Dataset"><span class="toc-number">5.</span> <span class="toc-text">3. MM-AU Dataset</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-AdVersa-SD"><span class="toc-number">6.</span> <span class="toc-text">4. AdVersa-SD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Abductive-CLIP"><span class="toc-number">6.1.</span> <span class="toc-text">4.1. Abductive CLIP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%85%B1%E7%8E%B0%E5%AF%B9%E5%92%8C%E8%B4%9F%E5%85%B1%E7%8E%B0%E5%AF%B9%E8%AF%A6%E8%A7%A3"><span class="toc-number">6.1.1.</span> <span class="toc-text">正共现对和负共现对详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%85%B1%E7%8E%B0%E5%AF%B9%EF%BC%88Pos-CoCPs%EF%BC%89%E5%92%8C%E8%B4%9F%E5%85%B1%E7%8E%B0%E5%AF%B9%EF%BC%88Neg-CoCPs%EF%BC%89%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">6.1.1.1.</span> <span class="toc-text">正共现对（Pos. CoCPs）和负共现对（Neg. CoCPs）的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%85%B1%E7%8E%B0%E5%AF%B9%E5%92%8C%E8%B4%9F%E5%85%B1%E7%8E%B0%E5%AF%B9%E5%9C%A8%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E4%BC%98%E5%8C%96%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-number">6.1.1.2.</span> <span class="toc-text">正共现对和负共现对在模型中的优化作用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%AD%A3%E5%85%B1%E7%8E%B0%E5%AF%B9%E5%92%8C%E8%B4%9F%E5%85%B1%E7%8E%B0%E5%AF%B9%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-number">6.1.1.3.</span> <span class="toc-text">如何通过正共现对和负共现对优化模型：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-Extension-to-Accident-Video-Diffusion"><span class="toc-number">6.2.</span> <span class="toc-text">4.2. Extension to Accident Video Diffusion</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9E%E9%AA%8C"><span class="toc-number">7.</span> <span class="toc-text">5. 实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%AE%9E%E9%AA%8C%E7%BB%86%E8%8A%82"><span class="toc-number">7.1.</span> <span class="toc-text">5.1 实验细节</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
 
 
+        
+          
+
+                
+
+                      
+
+                            
+
+                                
+                                      
           </div>
         </div>
       </div>
@@ -270,9 +628,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
-				isTag: true,
+				isTag: false,
 					isCategory: false,
 						open_in_new: false,
 							toc_hide_index: true,
