@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>chmod命令的快速使用指导 | WilliamZH&#39;s Blog</title>
+  <title>跨任务迁移与多模态学习：LLaVA-NeXT-Interleave的多图像场景研究 | WilliamZH&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="chmod 命令用于更改文件或目录的权限。它的基本语法是：">
+  <meta name="description" content="这篇文章的主要贡献是介绍了LLaVA-NeXT-Interleave模型，该模型旨在解决多模态模型在多图像（multi-image）、多帧（视频）、3D场景和单图像任务上的通用适应性。其核心创新在于提出一种交错（interleave）数据格式，使模型能够在多种视觉任务间灵活适应，并实现跨任务的迁移能力。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chmod命令的快速使用指导">
-<meta property="og:url" content="http://example.com/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/index.html">
+<meta property="og:title" content="跨任务迁移与多模态学习：LLaVA-NeXT-Interleave的多图像场景研究">
+<meta property="og:url" content="http://example.com/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/index.html">
 <meta property="og:site_name" content="WilliamZH&#39;s Blog">
-<meta property="og:description" content="chmod 命令用于更改文件或目录的权限。它的基本语法是：">
+<meta property="og:description" content="这篇文章的主要贡献是介绍了LLaVA-NeXT-Interleave模型，该模型旨在解决多模态模型在多图像（multi-image）、多帧（视频）、3D场景和单图像任务上的通用适应性。其核心创新在于提出一种交错（interleave）数据格式，使模型能够在多种视觉任务间灵活适应，并实现跨任务的迁移能力。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-20T12:36:17.000Z">
-<meta property="article:modified_time" content="2024-08-14T09:14:56.540Z">
+<meta property="og:image" content="http://example.com/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/image1.png">
+<meta property="og:image" content="http://example.com/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/image2.png">
+<meta property="article:published_time" content="2024-10-28T12:42:13.000Z">
+<meta property="article:modified_time" content="2024-10-29T08:04:22.433Z">
 <meta property="article:author" content="WilliamZH">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="多模态">
+<meta property="article:tag" content="Interleave数据格式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/image1.png">
   
     <link rel="alternative" href="/atom.xml" title="WilliamZH&#39;s Blog" type="application/atom+xml">
   
@@ -179,7 +184,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-chmod命令的快速使用指导"
+            <article id="post-跨任务迁移与多模态学习：LLaVA-NeXT-Interleave的多图像场景研究"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -187,14 +192,14 @@
         
   
     <h1 class="article-title" itemprop="name">
-      chmod命令的快速使用指导
+      跨任务迁移与多模态学习：LLaVA-NeXT-Interleave的多图像场景研究
     </h1>
   
 
 
           
-            <a href="/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" class="archive-article-date">
-  	<time datetime="2024-01-20T12:36:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-20</time>
+            <a href="/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/" class="archive-article-date">
+  	<time datetime="2024-10-28T12:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-28</time>
 </a>
               <!-- 需要添加的位置 -->
               <!-- 开始添加字数统计-->
@@ -205,7 +210,7 @@
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text"> </span>
             <span class="post-count">
-                298字
+                2.9k字
             </span>
         </span>
     </span>
@@ -216,7 +221,7 @@
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text"> 预计阅读时长: </span>
             <span class="post-count">
-                1min
+                10min
             </span>
         </span>
     </span>
@@ -240,72 +245,112 @@
         <div class="article-entry" itemprop="articleBody">
           
                 
-                          <p><strong>chmod 命令用于更改文件或目录的权限。</strong><br>它的基本语法是：</p>
+                          <p>这篇文章的主要贡献是介绍了<a target="_blank" rel="noopener" href="https://llava-vl.github.io/blog/2024-06-16-llava-next-interleave/">LLaVA-NeXT-Interleave</a>模型，该模型旨在解决多模态模型在多图像（multi-image）、多帧（视频）、3D场景和单图像任务上的通用适应性。其核心创新在于提出一种<strong>交错（interleave）数据格式</strong>，使模型能够在多种视觉任务间灵活适应，并实现跨任务的迁移能力。</p>
 <span id="more"></span>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> [选项] 模式 文件或目录</span><br></pre></td></tr></table></figure>
-<p>其中：</p>
-<ol>
-<li>选项是一些用于修改权限的额外参数。</li>
-<li>模式是用于指定权限的数字或符号。</li>
-<li>文件或目录是你要修改权限的文件或目录的名称。</li>
-</ol>
-<p>以下是一些常用的 chmod 选项和模式：</p>
-<ol>
-<li><strong>使用数字模式：</strong></li>
-</ol>
-<ul>
-<li><p><strong>数字模式：</strong></p>
-<ul>
-<li>4：读权限（r）</li>
-<li>2：写权限（w）</li>
-<li>1：执行权限（x）</li>
-</ul>
-</li>
-<li><p><strong>组合：</strong></p>
-<ul>
-<li>0：无权限</li>
-<li>7：读、写、执行权限</li>
-<li>6：读、写权限</li>
-<li>5：读、执行权限</li>
-<li>4：读权限</li>
-<li>3：写、执行权限</li>
-<li>2：写权限</li>
-<li>1：执行权限</li>
-</ul>
-</li>
-</ul>
-<p>例如，将文件 example. txt 设置为所有者具有读写权限，组和其他用户只有读权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 644 example. txt</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li><strong>使用符号模式：</strong></li>
+<h1 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h1><ol>
+<li><strong>交错数据格式的通用性</strong><blockquote>
+<p>作者提出使用图像-文本交错的格式作为统一的数据模板，不论是单图像、多图像、视频多帧还是3D多视角数据，都可以采用该格式处理。这一统一模板使模型在不同任务中表现出一致性和高适应性，打破了以往每种任务单独设计模型的局限性。</p>
+</blockquote>
+</li>
+<li><strong>M4-Instruct数据集的构建</strong><blockquote>
+<p>为支持多任务学习，作者构建了包含<strong>1177.6k样本</strong>的M4-Instruct数据集，涵盖4个主要领域（多图像、视频多帧、3D多视角、单图像），共14个任务和41个数据集。这个数据集成为训练多模态模型的高质量数据来源，并通过丰富的数据覆盖实现更强的模型泛化能力。</p>
+</blockquote>
+</li>
+<li><strong>LLaVA-Interleave Bench评估基准</strong><blockquote>
+<p>为了评估模型在多图像任务上的表现，作者引入了LLaVA-Interleave Bench，这一基准包括7个新收集的评估任务和13个现有数据集，提供了多种视觉任务的评估标准，使得模型可以在跨领域和跨任务中进行比较。</p>
+</blockquote>
+</li>
+<li><strong>多任务迁移与创新能力</strong><blockquote>
+<p>通过多任务联合训练，LLaVA-NeXT-Interleave展现了跨任务迁移的潜力，如从单图像任务到多图像任务的迁移，以及从图像任务到视频任务的迁移。这些“新兴能力”表明，模型在训练过程中发展出了一定的泛化能力，能够在推理时适应新的任务和场景。</p>
+</blockquote>
+</li>
 </ol>
-<ul>
-<li><p><strong>符号模式：</strong></p>
-<ul>
-<li><code>+</code>：添加权限</li>
-<li><code>-</code>：删除权限</li>
-<li><code>=</code>：设置权限</li>
-</ul>
+<h1 id="Abstract-Introduction"><a href="#Abstract-Introduction" class="headerlink" title="Abstract &amp; Introduction"></a>Abstract &amp; Introduction</h1><ol>
+<li><p><strong>研究背景：</strong> 现有开源的大型多模态模型多集中于单图像任务，缺少对多图像场景的泛化能力，且早期研究无法支持跨场景应用。</p>
 </li>
-<li><p><strong>权限：</strong></p>
-<ul>
-<li><code>r</code>：读权限</li>
-<li><code>w</code>：写权限</li>
-<li><code>x</code>：执行权限</li>
-</ul>
+<li><p><strong>模型介绍：</strong> LLaVA-NeXT-Interleave模型旨在统一处理多图像、多帧（视频）、3D多视角和单图像任务。它通过一种通用的交错数据格式模板实现跨模态和跨任务的泛化能力。</p>
 </li>
-<li><p><strong>用户：</strong></p>
-<ul>
-<li><code>u</code>：所有者</li>
-<li><code>g</code>：组</li>
-<li><code>o</code>：其他用户</li>
-<li><code>a</code>：所有用户（u、g、o 的组合）</li>
-</ul>
+<li><p><strong>数据集：</strong> 编制了M4-Instruct数据集，包含117.76万条数据，涵盖了14个任务和41个数据集，支持多模态模型的多任务学习。</p>
 </li>
+<li><p><strong>评估基准：</strong> 创建了LLaVA-Interleave Bench评估基准，用于全面评测多图像任务表现。</p>
+</li>
+<li><p><strong>实验结果：</strong> 模型在多图像、视频和3D任务上表现领先，并保持单图像任务性能，展示了新兴的跨模态迁移能力。</p>
+</li>
+</ol>
+<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><h2 id="Interleaved-Image-text-Training-Data"><a href="#Interleaved-Image-text-Training-Data" class="headerlink" title="Interleaved Image-text Training Data"></a>Interleaved Image-text Training Data</h2><p>交错格式赋予LMMs多模态上下文学习（ICL）和指令跟随能力。ICL能力通过在提示中插入图像-文本示例实现少样本学习。重要模型包括Flamingo（首次展示ICL）和MIMIC-IT（生成多模态样本的 automatic pipeline）。此外，VPG-C和M4-Instruct提供了丰富的多图像数据集以扩展多场景覆盖。</p>
+<h2 id="Interleaved-LMMs"><a href="#Interleaved-LMMs" class="headerlink" title="Interleaved LMMs"></a>Interleaved LMMs</h2><p>代表性模型GPT-4V和Gemini表现出较强的多图像应用能力。<br>ICL性能已被用于多模态预训练的评估。<br>LLaVA-NeXT-Interleave 通过单一模型实现了多图像、视频、3D和单图像的多场景处理，展示了跨场景的任务组合能力。</p>
+<h2 id="Interleaved-Benchmarks"><a href="#Interleaved-Benchmarks" class="headerlink" title="Interleaved Benchmarks"></a>Interleaved Benchmarks</h2><p>多个基准被用来评估LMMs的多图像能力，包括NLVR2用于日常VQA、DEMON编制了大量多样性数据集。<br>本文提出的LLaVA-Interleave Bench基准包含高质量样本，涵盖特定和通用场景，分为in-domain 和 out-domain schemes。</p>
+<h1 id="Interleaved-Multi-image-Tasks-Data-交错多图像任务与数据"><a href="#Interleaved-Multi-image-Tasks-Data-交错多图像任务与数据" class="headerlink" title="Interleaved Multi-image Tasks &amp; Data 交错多图像任务与数据"></a>Interleaved Multi-image Tasks &amp; Data 交错多图像任务与数据</h1><h2 id="Task-Overview"><a href="#Task-Overview" class="headerlink" title="Task Overview"></a>Task Overview</h2><blockquote>
+<p>此部分提出了使用交错格式处理多种任务的框架，将多图像和单图像任务统一为一个模型的输入方式，为多模态任务的跨场景应用提供了创新性的解决方案。</p>
+</blockquote>
+<p><strong>多图像场景：</strong> 通过交错的视觉-语言输入处理多张图像的任务，包括差异识别、图像编辑等现实应用任务。</p>
+<p><strong>多帧场景：</strong> 使用视频的多帧序列来保持时间信息，涉及视频字幕生成和视频VQA任务。</p>
+<p><strong>多视角场景：</strong> 通过不同视角的图像反映3D环境的空间信息，包括3D场景和具身VQA任务。</p>
+<p><strong>多片段场景：</strong> 将单图像分割成多个低分辨率片段以提高视觉编码效率，适用于传统的单图像任务。</p>
+<h2 id="M4-Instruct"><a href="#M4-Instruct" class="headerlink" title="M4-Instruct"></a>M4-Instruct</h2><blockquote>
+<p>M4-Instruct数据集的设计和LLaVA-Interleave Bench评估基准的引入为LMMs在多场景中的全面评估提供了支持。通过域内 in-domain 和域外 out-domain 任务的划分，能够更清晰地考察模型的泛化和适应能力。</p>
+</blockquote>
+<p><strong>数据集构建：</strong> M4-Instruct数据集包含117.76万条实例，涵盖多图像、多帧、多视角和多片段四种场景，支持14个任务和41个数据集，增强了模型在多图像任务中的表现和多样化能力。</p>
+<p><strong>数据源与标注：</strong> 多图像数据源自公开数据并转化为统一格式，新增“真实世界差异”等三项任务；视频数据从LLaVA-Hound等数据集收集；3D数据涵盖室内外场景，单图像数据则随机抽取用于保持单图像能力。</p>
+<p><strong>评估基准：</strong> LLaVA-Interleave Bench包含17K条数据的13个多图像任务，分为域内（12.9K）和域外（4.1K）评估，以测试模型在见过和未见过任务上的表现。</p>
+<blockquote>
+<p>可以将<strong>域内场景（in-domain）</strong>理解为模型在训练过程中“见过”的任务场景，即直接使用过的训练数据。<br><strong>域外场景（out-domain）</strong>则是指模型在训练过程中未曾接触过的场景或任务，即没有直接使用过的训练数据。这些任务与训练数据不重叠，用于测试模型在完全新环境下的泛化能力</p>
+</blockquote>
+<h1 id="Interleaved-Visual-Instruction-Tuning-交错视觉指令调优"><a href="#Interleaved-Visual-Instruction-Tuning-交错视觉指令调优" class="headerlink" title="Interleaved Visual Instruction Tuning 交错视觉指令调优"></a>Interleaved Visual Instruction Tuning 交错视觉指令调优</h1><blockquote>
+<p>这部分内容展示了LLaVA-NeXT-Interleave的三个关键技术，强调了基于单图像模型的训练扩展、多格式数据支持和多任务数据融合的创新之处，使模型在应对多样化视觉任务时更具灵活性和准确性。</p>
+</blockquote>
+<h2 id="继续训练单图像模型"><a href="#继续训练单图像模型" class="headerlink" title="继续训练单图像模型"></a>继续训练单图像模型</h2><blockquote>
+<p><img src="/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/image1.png"></p>
+<p>基于经过第一阶段的图像-字幕预训练和第二阶段的单图像微调的LLaVA-NeXT-Image模型，使用 M4-Instruct数据集执行交错的多图像指令调优</p>
+</blockquote>
+<p>通过以预训练的单图像模型作为基础，模型能更好地适应多图像任务的推理需求，特别是那些需要复杂推理的任务。</p>
+<h2 id="Mixed-Interleaved-data-formats-during-training"><a href="#Mixed-Interleaved-data-formats-during-training" class="headerlink" title="Mixed Interleaved data formats during training"></a>Mixed Interleaved data formats during training</h2><blockquote>
+<p>使用前置格式和交错格式来增强模型的灵活性和鲁棒性，使模型能够适应不同的输入格式，从而支持更灵活的推理。</p>
+</blockquote>
+<h3 id="前置格式-In-the-front-format"><a href="#前置格式-In-the-front-format" class="headerlink" title="前置格式 In-the-front format"></a>前置格式 In-the-front format</h3><p>将所有 image tokens 放在 prompt 之前，同时在文本中保留<image>占位符。</image></p>
+<ul>
+<li><strong>举例说明理解</strong><blockquote>
+<p>prompt：</p>
+<blockquote>
+<p>看一下图片1和图片2，描述它们之间的不同之处。<br>前置格式如下：</p>
+</blockquote>
+</blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">image1 tokens</span><br><span class="line">image2 tokens </span><br><span class="line">看一下 &lt;image&gt;1 和 &lt;image&gt;2，描述它们之间的不同之处。(text tokens)</span><br></pre></td></tr></table></figure>
+这种方式下，模型在处理输入时会先看到所有的图像，然后再看到文本提示。<strong>占位符⟨image⟩</strong>仍然会留在文本中，表明之前的图像内容。</li>
 </ul>
-<p>例如，将文件 example. txt 设置为所有者具有读写权限，组用户只有读权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u=rw,g=r example. txt</span><br></pre></td></tr></table></figure>
+<h3 id="交错格式-interleaved-format"><a href="#交错格式-interleaved-format" class="headerlink" title="交错格式 interleaved format"></a>交错格式 interleaved format</h3><p>将 image tokens放在原来的位置，即<image>占位符的位置。</image></p>
+<ul>
+<li><strong>举例说明理解</strong><blockquote>
+<p>prompt：</p>
+<blockquote>
+<p>看一下图片1和图片2，描述它们之间的不同之处。<br>交错格式如下：</p>
+</blockquote>
+</blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">看一下 image1 tokens 和 image2 tokens, 描述它们之间的不同之处。</span><br></pre></td></tr></table></figure>
+这更贴近实际场景中图像和文本的自然交互顺序。</li>
+</ul>
+<h2 id="多场景数据组合"><a href="#多场景数据组合" class="headerlink" title="多场景数据组合"></a>多场景数据组合</h2><blockquote>
+<p>利用四种任务的指令调优来提供互补信息，提高模型在每个单项任务上的性能，超越传统上仅使用单一数据源的微调方法。</p>
+</blockquote>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><blockquote>
+<p>此部分设计了全面的评估方案和详细的实现配置，确保LLaVA-NeXT-Interleave在多个复杂场景下的性能得到全面、客观的验证。<br><strong>评估场景：</strong> 在多图像、多帧视频、多视角3D和单图像四种交错场景下测试模型性能，涵盖全面的领域和评估标准。</p>
+</blockquote>
+<p><strong>评估基准与指标：</strong> 针对不同场景，使用多种数据集进行评估；视频评估还包含五个质量指标，3D评估则加入了新测试集，确保了评估的广泛性和准确性。</p>
+<p><strong>实现细节：</strong> 模型使用Qwen 1.5作为语言模型，视觉编码器采用SigLIP-400M，以两层MLP完成投影。</p>
+<h2 id="Main-Results"><a href="#Main-Results" class="headerlink" title="Main Results"></a>Main Results</h2><blockquote>
+<p>此部分展示了LLaVA-NeXT-Interleave在四类场景下的广泛适应性和强劲性能，表明其在多模态任务中的领先水平和多任务迁移能力。</p>
+</blockquote>
+<p><strong>多图像任务：</strong> LLaVA-NeXT-Interleave在域内和域外任务上均优于其他模型，特别是在域外任务中表现出色，表明其具有较强的泛化能力。</p>
+<p><strong>多帧（视频）任务：</strong> 尽管未专为视频任务设计，该模型在视频理解和时间推理方面表现出色，经过DPO训练后在VDD和VideoChatGPT基准上达到最先进水平。</p>
+<p><strong>多视角（3D）任务：</strong> 在3D任务上，模型无需额外的点云输入，通过多视角图像即可获得优异的3D场景理解表现，领先其他需要额外输入的模型。</p>
+<p><strong>多片段（单图像）任务：</strong> 通过增加高质量的单图像数据，模型保留了单图像任务性能，同时增强了指令跟随能力，使得单图像到多图像任务的迁移成为可能。</p>
+<h2 id="Ablations-of-Proposed-Techniques-消融实验"><a href="#Ablations-of-Proposed-Techniques-消融实验" class="headerlink" title="Ablations of Proposed Techniques 消融实验"></a>Ablations of Proposed Techniques 消融实验</h2><p><img src="/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/image2.png"><br><strong>单图像模型初始化：</strong> 从单图像模型的第二阶段检查点进行初始化可以显著提高多图像任务的表现，表明基础模型的预训练阶段对后续任务性能有较大影响。</p>
+<p><strong>混合格式训练：</strong> 混合前置和交错格式的训练策略能够同时提高两种输入格式的适应性，使模型在应对不同格式输入时表现更好。</p>
+<p><strong>数据集成提升性能：</strong> 在视频数据的基础上逐步添加单图像和多图像数据，能够提升模型的整体性能，说明多数据源的整合对于模型的多任务学习具有重要作用。</p>
+<h1 id="Emerging-Capabilities"><a href="#Emerging-Capabilities" class="headerlink" title="Emerging Capabilities"></a>Emerging Capabilities</h1><p><strong>任务迁移能力：</strong> 模型能够在未训练的任务间进行迁移，例如从单图像到多图像，以及从图像到视频的任务迁移。</p>
+<p><strong>现实应用场景：</strong> 模型表现出强大的泛化能力，能够适应绘画风格识别、PPT内容理解和跨文档VQA等实际应用场景。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>读完啦 这里不重要~</p>
 
                             
 
@@ -353,7 +398,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Interleave数据格式</a>
         		</li>
       		
 		</ul>
@@ -365,7 +418,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
         		</li>
       		
 		</ul>
@@ -420,7 +473,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -434,18 +487,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Linux执行Ctrl-z后出现[1]+Stopped
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/11/29/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Ahexo%E6%96%87%E7%AB%A0%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">三步学会hexo文章插入图片</div>
+    <a href="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -464,6 +508,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B4%A1%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text">主要贡献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Abstract &amp; Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Related-Work"><span class="toc-number">3.</span> <span class="toc-text">Related Work</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Interleaved-Image-text-Training-Data"><span class="toc-number">3.1.</span> <span class="toc-text">Interleaved Image-text Training Data</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interleaved-LMMs"><span class="toc-number">3.2.</span> <span class="toc-text">Interleaved LMMs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interleaved-Benchmarks"><span class="toc-number">3.3.</span> <span class="toc-text">Interleaved Benchmarks</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Interleaved-Multi-image-Tasks-Data-%E4%BA%A4%E9%94%99%E5%A4%9A%E5%9B%BE%E5%83%8F%E4%BB%BB%E5%8A%A1%E4%B8%8E%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">Interleaved Multi-image Tasks &amp; Data 交错多图像任务与数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Task-Overview"><span class="toc-number">4.1.</span> <span class="toc-text">Task Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M4-Instruct"><span class="toc-number">4.2.</span> <span class="toc-text">M4-Instruct</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Interleaved-Visual-Instruction-Tuning-%E4%BA%A4%E9%94%99%E8%A7%86%E8%A7%89%E6%8C%87%E4%BB%A4%E8%B0%83%E4%BC%98"><span class="toc-number">5.</span> <span class="toc-text">Interleaved Visual Instruction Tuning 交错视觉指令调优</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E7%BB%AD%E8%AE%AD%E7%BB%83%E5%8D%95%E5%9B%BE%E5%83%8F%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text">继续训练单图像模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mixed-Interleaved-data-formats-during-training"><span class="toc-number">5.2.</span> <span class="toc-text">Mixed Interleaved data formats during training</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E6%A0%BC%E5%BC%8F-In-the-front-format"><span class="toc-number">5.2.1.</span> <span class="toc-text">前置格式 In-the-front format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E9%94%99%E6%A0%BC%E5%BC%8F-interleaved-format"><span class="toc-number">5.2.2.</span> <span class="toc-text">交错格式 interleaved format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%9C%BA%E6%99%AF%E6%95%B0%E6%8D%AE%E7%BB%84%E5%90%88"><span class="toc-number">5.3.</span> <span class="toc-text">多场景数据组合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiments"><span class="toc-number">6.</span> <span class="toc-text">Experiments</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Settings"><span class="toc-number">6.1.</span> <span class="toc-text">Settings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Main-Results"><span class="toc-number">6.2.</span> <span class="toc-text">Main Results</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ablations-of-Proposed-Techniques-%E6%B6%88%E8%9E%8D%E5%AE%9E%E9%AA%8C"><span class="toc-number">6.3.</span> <span class="toc-text">Ablations of Proposed Techniques 消融实验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Emerging-Capabilities"><span class="toc-number">7.</span> <span class="toc-text">Emerging Capabilities</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">8.</span> <span class="toc-text">Conclusion</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
