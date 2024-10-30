@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://example.com/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/image5.png">
 <meta property="og:image" content="http://example.com/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/figure4.png">
 <meta property="article:published_time" content="2024-10-30T09:51:48.000Z">
-<meta property="article:modified_time" content="2024-10-30T13:26:51.962Z">
+<meta property="article:modified_time" content="2024-10-30T13:33:47.765Z">
 <meta property="article:author" content="WilliamZH">
 <meta property="article:tag" content="计算机视觉">
 <meta property="article:tag" content="多模态">
@@ -216,7 +216,7 @@
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text"> </span>
             <span class="post-count">
-                2.7k字
+                2.8k字
             </span>
         </span>
     </span>
@@ -280,12 +280,7 @@
 <h1 id="The-Curation-of-Img-Diff"><a href="#The-Curation-of-Img-Diff" class="headerlink" title="The Curation of Img-Diff"></a>The Curation of Img-Diff</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/figure2.png" alt="figure2"></p>
 <ol>
 <li>通过对比学习原则，生成 MLLM 图文数据，聚焦图像对中的物体替换。</li>
-<li>生成 object replacement 数据的过程可分为三个主要部分。<ul>
-<li>创建相似图像并构成 <strong>Image Pairs</strong></li>
-<li><strong>Difference Area Generator</strong> 提取包含图像对中物体差异的边界框区域</li>
-<li><strong>Difference Captions Generator</strong> 使用 MLLM 为含有物体差异的区域生成描述性文本，并创建问题-答案对</li>
-</ul>
-</li>
+<li>生成 object replacement 数据的过程可分为三个主要部分。<br> 2.1. 创建相似图像并构成 <strong>Image Pairs</strong><br> 2.2. <strong>Difference Area Generator</strong> 提取包含图像对中物体差异的边界框区域<br> 2.3. <strong>Difference Captions Generator</strong> 使用 MLLM 为含有物体差异的区域生成描述性文本，并创建问题-答案对</li>
 <li>多重过滤操作确保数据质量，组件在 Data-Juicer 中实现，便于复现。</li>
 </ol>
 <h2 id="Image-Pairs-Generation"><a href="#Image-Pairs-Generation" class="headerlink" title="Image Pairs Generation"></a>Image Pairs Generation</h2><p>过程：获取 MS COCO 图像描述，用 Vicuna-1.5-13B 生成物体替换描述对。</p>
