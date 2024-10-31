@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: 多模态 | WilliamZH&#39;s Blog</title>
+  <title>MUIRBENCH：突破单图像限制的多图像理解基准测试 | WilliamZH&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My baby blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WilliamZH&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/index.html">
+  <meta name="description" content="在多模态学习和图像理解领域，传统的基准测试多聚焦于单图像场景，忽略了多图像信息整合的复杂性。《MUIRBENCH: A Comprehensive Benchmark for Robust Multi-image Understanding》一文引入了MUIRBENCH，一个专为评估多图像理解能力而设计的全新基准，涵盖了丰富的图像关系和任务类别。本篇笔记将深入解析MUIRBENCH如何推动多模态大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MUIRBENCH：突破单图像限制的多图像理解基准测试">
+<meta property="og:url" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="WilliamZH&#39;s Blog">
-<meta property="og:description" content="My baby blog">
+<meta property="og:description" content="在多模态学习和图像理解领域，传统的基准测试多聚焦于单图像场景，忽略了多图像信息整合的复杂性。《MUIRBENCH: A Comprehensive Benchmark for Robust Multi-image Understanding》一文引入了MUIRBENCH，一个专为评估多图像理解能力而设计的全新基准，涵盖了丰富的图像关系和任务类别。本篇笔记将深入解析MUIRBENCH如何推动多模态大">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image1.png">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image2.png">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image4.png">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/figure5.png">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image3.png">
+<meta property="og:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image5.png">
+<meta property="article:published_time" content="2024-10-31T08:56:19.000Z">
+<meta property="article:modified_time" content="2024-10-31T10:53:57.073Z">
 <meta property="article:author" content="WilliamZH">
+<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="多模态">
+<meta property="article:tag" content="图像理解">
+<meta property="article:tag" content="基准测试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image1.png">
   
     <link rel="alternative" href="/atom.xml" title="WilliamZH&#39;s Blog" type="application/atom+xml">
   
@@ -176,36 +189,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MUIRBENCH：突破单图像限制的多图像理解基准测试"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2024-10-31T08:56:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/">MUIRBENCH：突破单图像限制的多图像理解基准测试</a>
+    <h1 class="article-title" itemprop="name">
+      MUIRBENCH：突破单图像限制的多图像理解基准测试
     </h1>
   
 
-        <div class="article-info info-on-right">
+
           
+            <a href="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" class="archive-article-date">
+  	<time datetime="2024-10-31T08:56:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-31</time>
+</a>
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> </span>
+            <span class="post-count">
+                3k字
+            </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 预计阅读时长: </span>
+            <span class="post-count">
+                10min
+            </span>
+        </span>
+    </span>
+</div>
+                  
+                    <!-- 添加完成 -->
+                    
+
+                      <!--显示阅读次数-->
+                      
+
+                        <span id="busuanzi_container_page_pv" style="color:#9763e9d8;font-size:14px;">
+                          阅读量: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+                        </span>
+
+                        
+                          <!--显示阅读次数完毕-->
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+                
+                          <p>在多模态学习和图像理解领域，传统的基准测试多聚焦于单图像场景，忽略了多图像信息整合的复杂性。《<a target="_blank" rel="noopener" href="https://muirbench.github.io/">MUIRBENCH: A Comprehensive Benchmark for Robust Multi-image Understanding</a>》一文引入了MUIRBENCH，一个专为评估多图像理解能力而设计的全新基准，涵盖了丰富的图像关系和任务类别。本篇笔记将深入解析MUIRBENCH如何推动多模态大模型在多图像推理上的进展，并揭示现有模型的不足之处与未来改进的方向。</p>
+<span id="more"></span>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p><strong>MUIRBENCH 基准的特点：</strong></p>
+<ul>
+<li><strong>多样性</strong>：包含12种任务和10类图像关系类型，适用于多图像理解能力的全面评估。</li>
+<li><strong>数据量</strong>：11,264张图像和2,600道多选题，确保评估的覆盖面。</li>
+<li><strong>成对设计</strong>：每道题都包含可解答与不可解答对，以确保模型的准确性和稳健性测试。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image1.png"></li>
+</ul>
+<p><strong>实验结果：</strong></p>
+<ul>
+<li><strong>高级模型的挑战性</strong>：即便是高级多模态模型GPT-4o和Gemini Pro，准确率仍低于理想值，表明多图像理解任务的高难度。</li>
+<li><strong>开源模型的局限性</strong>：仅基于单图像训练的开源模型在多图像任务中泛化能力不足，准确率偏低。</li>
+</ul>
+<p><strong>重要性与未来发展方向：</strong></p>
+<ul>
+<li>MUIRBENCH为多模态大模型提供了一个超越单图像处理的机会，揭示了需要提升多图像理解能力的领域，为未来多模态模型的改进提供了方向。</li>
+</ul>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><strong>人类的多图像理解优势：</strong></p>
+<p>人类擅长整合多幅图像以获取完整、整体的世界观，如通过卡通系列图像讲故事、比较图表以获得洞见等。</p>
+<p>多图像输入可以克服单图像的分辨率限制，使视觉理解更加全面。</p>
+<p><strong>多模态LLM的现状和挑战：</strong></p>
+<p>尽管多模态LLM在单图像任务中表现优异，但当前评估方式局限于单图像理解，未能充分测试模型的多图像理解能力。</p>
+<p>现有的基准未能全面覆盖多图像任务的复杂性，限制了模型在高级多模态理解中的潜力。</p>
+<p><strong>MUIRBENCH的设计与贡献</strong>：</p>
+<p><strong>数据规模</strong>：MUIRBENCH包含11,264张图像和2,600道题，覆盖12种多图像任务和多种图像关系类型。</p>
+<p><strong>成对设计</strong>：每道题都包含一个不可解答的对应项，确保了模型在多图像理解中的可靠性。</p>
+<p><strong>精细注释</strong>：附有丰富的图像位置和类型注释，有助于模型性能的细致分析。</p>
+<p><strong>实验结果和结论</strong>：</p>
+<p>当前最强的多模态LLM在多图像任务中的表现不及人类，且在不可解答问题上差距更大。</p>
+<p>基于单图像训练的LLM在多图像情境下表现有限，揭示了提升多图像理解能力的迫切需求。</p>
+<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><blockquote>
+<p>该部分明确了当前多模态LLM评估和模型发展中的不足。现有基准大多聚焦于单图像场景或不同的多模态任务，未能全面覆盖多图像理解场景，尤其是在多视角、多关系和推理复杂性方面的需求。同时，早期多模态LLM的单图像训练限制了模型在多图像推理方面的拓展。</p>
+</blockquote>
+<p><strong>多模态理解基准的现状：</strong></p>
+<p>当前基准大多集中于单图像评估，无法全面测试模型的多图像理解能力。</p>
+<p>一些基准涉及视频或情境学习，但其核心任务与多图像理解有所不同。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image2.png"><br>MANTIS-Eval和DEMON等基准开始探索多图像推理，但覆盖的关系和推理类型有限，缺乏稳健性。</p>
+<p><strong>多模态大模型的发展：</strong></p>
+<p>早期的多模态LLM多基于单图像数据训练，未考虑多图像理解的复杂性。</p>
+<p>随着MMC4和OBELICS等多模态语料的应用，一些模型可以处理多图像生成任务，但在多图像推理方面尚未完全验证其效果。</p>
+<p>指令微调模型在某些任务中表现出多图像输入的初步能力，但多关系和多任务推理能力的探索依然不足。</p>
+<h1 id="MUIRBENCH"><a href="#MUIRBENCH" class="headerlink" title="MUIRBENCH"></a>MUIRBENCH</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><strong>MUIRBENCH的设计原则：</strong></li>
+</ul>
+<p><strong>全面性</strong>：包含12种任务和10种图像关系类型，支持模型的多视角、多关系评估。</p>
+<p><strong>稳健性</strong>：采用成对设计，每道题目都配备一个不可解答项，确保模型在现实情境中的可靠性。</p>
+<ul>
+<li><strong>任务类别：</strong></li>
+</ul>
+<p><strong>动作理解（ACTION UNDERSTANDING）</strong>：评估模型按时间顺序理解连续图像并将其与相应动作匹配的能力。</p>
+<p><strong>属性相似性（ATTRIBUTE SIMILARITY）</strong>：评估模型在多张图像中识别给定属性的能力。</p>
+<p><strong>卡通理解（CARTOON UNDERSTANDING）</strong>：评估模型理解卡通图像中故事内容的能力。</p>
+<p><strong>计数（COUNTING）</strong>：评估模型在多张图像中计数特定物体数量的能力。</p>
+<p><strong>图解理解（DIAGRAM UNDERSTANDING）</strong>：评估模型理解图解信息的能力。</p>
+<p><strong>差异发现（DIFFERENCE SPOTTING）</strong>：评估模型在多张图像中识别差异的能力。</p>
+<p><strong>地理理解（GEOGRAPHIC UNDERSTANDING）</strong>：评估模型理解地图和地理特征推理的能力。</p>
+<p><strong>图文匹配（IMAGE-TEXT MATCHING）</strong>：评估模型理解文本片段含义并与对应视觉内容匹配的能力。</p>
+<p><strong>排序（ORDERING）</strong>：评估模型根据文本描述对一系列图像排序的能力。</p>
+<p><strong>场景理解（SCENE UNDERSTANDING）</strong>：评估模型理解由多个监控图像构成的场景的能力。</p>
+<p><strong>视觉定位（VISUAL GROUNDING）</strong>：评估模型在多张图像中定位特定物体并获取信息的能力。</p>
+<p><strong>视觉检索（VISUAL RETRIEVAL）</strong>：评估模型检索包含相同建筑物图像的能力。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image4.png" alt="alt text"></p>
+<ul>
+<li><strong>数据的多样性：</strong></li>
+</ul>
+<p>涉及10种图像关系（如叙事、多视角、时间序列）和多种图像类型，增加了基准的复杂性和真实度。</p>
+<ul>
+<li><strong>Robust Evaluation：</strong><br>在现实场景中，用户的问题不一定总是可解答的。</li>
+</ul>
+<p>使用多种方法手动创建不可解答项，以模拟用户在现实中的提问情况，增强评估的可信度和实用性。</p>
+<h2 id="Data-Collection"><a href="#Data-Collection" class="headerlink" title="Data Collection"></a>Data Collection</h2><p><strong>可解答数据收集策略：</strong></p>
+<p>使用<strong>三种</strong>数据来源：现有数据集 existing datasets、衍生数据 dataset derivations（通过多种策略（如问题生成、选项重写和单图像问答组合等）将数据转换为MCQA格式）和新收集的数据newly collected data。</p>
+<p>新数据特别关注地理理解和视觉检索等任务，以弥补现有数据的不足。</p>
+<p><strong>不可解答数据的生成方法：</strong></p>
+<p><strong>图像替换或重新排序</strong>：扰乱图像关系，使问题无法解答。<br><strong>问题修改</strong>：使问题与图像和选项不兼容。<br><strong>选项替换</strong>：创建没有正确答案的场景。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/figure5.png"></p>
+<p><strong>质量控制措施：</strong></p>
+<p>自动检查：确保数据格式、答案、图像共指和图像可访问性。<br>人工检查：由专家审查，排除不清晰或容易混淆的数据。</p>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><blockquote>
+<p>实验结果凸显了MUIRBENCH对当前多模态LLM的挑战性，同时揭示了多图像任务中的独特需求。尽管单图像输入模型尝试泛化到多图像任务，但效果不佳，这表明多图像理解能力的开发需依赖专门的训练数据和策略。该实验进一步验证了MUIRBENCH作为多模态LLM测试平台的价值，并为未来提升模型的多图像推理能力指明了方向。</p>
+</blockquote>
+<h2 id="Experimental-Setup"><a href="#Experimental-Setup" class="headerlink" title="Experimental Setup"></a>Experimental Setup</h2><p>涵盖多种多模态LLM，包括专为多图像设计的模型和为单图像设计的模型。</p>
+<p>使用标准评估设置，将不支持多图像输入的模型图像拼接为单一输入。</p>
+<h2 id="Main-Results"><a href="#Main-Results" class="headerlink" title="Main Results"></a>Main Results</h2><p><strong>整体表现</strong>：先进MLLM在MUIRBENCH上的准确率普遍不高，甚至某些模型在特定任务上的表现不及随机猜测。</p>
+<p><strong>优势与劣势任务</strong>：模型在图文匹配、视觉检索和图解理解上表现较好，但在多图像排序和视觉定位上表现较差（这些任务需要理解完整的多图像上下文，并在图像和模态之间进行更复杂的推理过程），说明多图像任务中的复杂推理仍是难点。</p>
+<p><strong>单图像模型的局限</strong>：单图像输入模型难以泛化到多图像任务，而多图像输入模型得益于多图像训练数据和过程，表现更好。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image3.png"></p>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p><strong>不可解答问题的表现差异：</strong></p>
+<p>所有模型在不可解答集上的表现明显下降，模型在不可解答情境下往往倾向于随意作答，而非选择“放弃”。</p>
+<p><strong>GPT-4o的主要错误类型：</strong></p>
+<p><strong>细节捕捉不足</strong>：26%的错误因未能准确捕捉图像细节而产生。<br><strong>计数和推理不准确</strong>：占20%，主要表现在物体计数错误和推理不准确。<br><strong>逻辑推理错误</strong>：占18%，表现为逻辑推理不正确。<br><strong>跨场景识别困难</strong>：14%的错误源于未能在不同场景识别相同物体。<br><strong>意图推断失败</strong>：12%的错误在于未能从图像序列中推断出意图。</p>
+<p><strong>模型的幻觉问题：</strong></p>
+<p>面对不可解答问题时，模型倾向于选择看似正确但实际错误的答案，而非选择“放弃”，表明模型在不可解答情境下的局限性。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p><strong>实验发现：</strong></p>
+<p>现有的20个多模态LLM，包括GPT-4和Gemini Pro，表现出显著的局限性，难以在多图像场景中与人类表现相匹敌。<br>模型在不可解答问题上的表现尤为薄弱。</p>
+<h1 id="Appendices"><a href="#Appendices" class="headerlink" title="Appendices"></a>Appendices</h1><h2 id="可解答数据的来源和整理"><a href="#可解答数据的来源和整理" class="headerlink" title="可解答数据的来源和整理"></a>可解答数据的来源和整理</h2><p><strong>现有数据集</strong>：如GeneCIS和SeedBench，专注于特定多图像推理方面或包含少量多图像数据，每个数据集最多抽取200个实例。<br><strong>衍生数据集</strong>：如NLVR2、ISVQA，通过问题和选项的重新设计转化为MCQA，每个数据集抽取200个实例。<br><strong>新收集数据</strong>：补充了缺乏的任务和图像类型，四个新数据集（HistoricalMap、UnivBuilding、PubMedMQA、SciSlides）共占37.5%。</p>
+<h2 id="不可解答实例的生成策略"><a href="#不可解答实例的生成策略" class="headerlink" title="不可解答实例的生成策略"></a>不可解答实例的生成策略</h2><p><strong>图像替换或重新排序</strong>：24.2%的不可解答实例通过调整图像关系生成。<br><strong>问题修改</strong>：35.3%通过使问题与图像或选项不兼容生成。<br><strong>选项替换</strong>：40.5%通过更改选项以确保没有正确答案生成。</p>
+<h2 id="元数据标注"><a href="#元数据标注" class="headerlink" title="元数据标注"></a>元数据标注</h2><p><strong>图像关系</strong>：手动标注，重要性较高，影响模型的多图像推理能力。<br><strong>任务和图像类型</strong>：部分来自现有数据，缺失部分手动补充。<br><strong>图像数量和位置</strong>：自动标注，确保标注的准确性。</p>
+<h2 id="质量控制"><a href="#质量控制" class="headerlink" title="质量控制"></a>质量控制</h2><p><strong>自动检查</strong>：确保数据格式、答案、元数据准确性以及图像的可访问性。<br><strong>人工检查</strong>：排除不清晰或有误的数据，最终保留了86.3%的实例。</p>
+<h2 id="Experiment-Setting-Details"><a href="#Experiment-Setting-Details" class="headerlink" title="Experiment Setting Details"></a>Experiment Setting Details</h2><h3 id="Model-Prompts"><a href="#Model-Prompts" class="headerlink" title="Model Prompts"></a>Model Prompts</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Question: &#123;QUESTION&#125;</span><br><span class="line">Choices:</span><br><span class="line">(A) &#123;OPTION_A&#125;</span><br><span class="line">(B) &#123;OPTION_B&#125;</span><br><span class="line">(C) &#123;OPTION_C&#125;</span><br><span class="line">(D) &#123;OPTION_D&#125;</span><br><span class="line">Hint: Please provide the correct option letter, such as A, B, C, D, directly.</span><br><span class="line">Answer:</span><br></pre></td></tr></table></figure>
+
+<h3 id="Evaluation-Tool"><a href="#Evaluation-Tool" class="headerlink" title="Evaluation Tool"></a>Evaluation Tool</h3><p>工具首先检测直接答案索引，如未找到则匹配选项内容。<br>若无匹配，随机选择一个答案；若多个答案有效，选择最先出现的。</p>
+<h2 id="图像位置与错误率的关系"><a href="#图像位置与错误率的关系" class="headerlink" title="图像位置与错误率的关系"></a>图像位置与错误率的关系</h2><p>当图像作为选项呈现时，模型准确率最高；当图像位于问题中间时，错误率最高。</p>
+<p>可能原因包括：中间或结尾位置的图像打断上下文流，增加了处理复杂性。</p>
+<p>训练过程中，模型可能较少接触到图像在中间位置的情况。<br><img src="/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/image5.png"></p>
+
+                            
+
+                              
+                                <div class="page-reward">
+                                  <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                    <div class="tooltip tooltip-east">
+                                      <span class="tooltip-item">
+                                        赏
+                                      </span>
+                                      <span class="tooltip-content">
+                                        <span class="tooltip-text">
+                                          <span class="tooltip-inner">
+                                            <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                              谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                            </p>
+                                            <div class="reward-box">
+                                              
+                                                <div class="reward-box-item">
+                                                  <img class="reward-img" src="/img/pay.jpg">
+                                                  <span class="reward-type">支付宝</span>
+                                                </div>
+                                                
+                                                  
+                                                    <div class="reward-box-item">
+                                                      <img class="reward-img" src="/img/weixin.png">
+                                                      <span class="reward-type">微信</span>
+                                                    </div>
+                                                    
+                                            </div>
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </a>
+                                </div>
+                                
+                                  
+        </div>
+        <div class="article-info article-info-index">
+          
+              
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -229,7 +417,7 @@
 		</ul>
 	</div>
 
-          
+                
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -242,190 +430,118 @@
 	</div>
 
 
+                  
+
+                      
+                        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/10/31/MUIRBENCH%EF%BC%9A%E7%AA%81%E7%A0%B4%E5%8D%95%E5%9B%BE%E5%83%8F%E9%99%90%E5%88%B6%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E7%90%86%E8%A7%A3%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                          
+                            <div class="clearfix"></div>
+        </div>
   </div>
 </article>
+
   
+<nav id="article-nav">
+  
+  
+    <a href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多模态图像差异数据集 Img-Diff 的构建与应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2024-10-30T09:51:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-30</time>
-</a>
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/">多模态图像差异数据集 Img-Diff 的构建与应用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据集构建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Related-Work"><span class="toc-number">3.</span> <span class="toc-text">Related Work</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MUIRBENCH"><span class="toc-number">4.</span> <span class="toc-text">MUIRBENCH</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">4.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Collection"><span class="toc-number">4.2.</span> <span class="toc-text">Data Collection</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experiments"><span class="toc-number">5.</span> <span class="toc-text">Experiments</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Experimental-Setup"><span class="toc-number">5.1.</span> <span class="toc-text">Experimental Setup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Main-Results"><span class="toc-number">5.2.</span> <span class="toc-text">Main Results</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analysis"><span class="toc-number">5.3.</span> <span class="toc-text">Analysis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">6.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Appendices"><span class="toc-number">7.</span> <span class="toc-text">Appendices</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%A3%E7%AD%94%E6%95%B0%E6%8D%AE%E7%9A%84%E6%9D%A5%E6%BA%90%E5%92%8C%E6%95%B4%E7%90%86"><span class="toc-number">7.1.</span> <span class="toc-text">可解答数据的来源和整理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E8%A7%A3%E7%AD%94%E5%AE%9E%E4%BE%8B%E7%9A%84%E7%94%9F%E6%88%90%E7%AD%96%E7%95%A5"><span class="toc-number">7.2.</span> <span class="toc-text">不可解答实例的生成策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8"><span class="toc-number">7.3.</span> <span class="toc-text">元数据标注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">7.4.</span> <span class="toc-text">质量控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Experiment-Setting-Details"><span class="toc-number">7.5.</span> <span class="toc-text">Experiment Setting Details</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-Prompts"><span class="toc-number">7.5.1.</span> <span class="toc-text">Model Prompts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Evaluation-Tool"><span class="toc-number">7.5.2.</span> <span class="toc-text">Evaluation Tool</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E4%BD%8D%E7%BD%AE%E4%B8%8E%E9%94%99%E8%AF%AF%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">7.6.</span> <span class="toc-text">图像位置与错误率的关系</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/" class="archive-article-date">
-  	<time datetime="2024-10-28T12:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/28/%E8%B7%A8%E4%BB%BB%E5%8A%A1%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E6%A8%A1%E6%80%81%E5%AD%A6%E4%B9%A0%EF%BC%9ALLaVA-NeXT-Interleave%E7%9A%84%E5%A4%9A%E5%9B%BE%E5%83%8F%E5%9C%BA%E6%99%AF%E7%A0%94%E7%A9%B6/">跨任务迁移与多模态学习：LLaVA-NeXT-Interleave的多图像场景研究</a>
-    </h1>
-  
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
+
+        
           
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Interleave数据格式</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
-        		</li>
-      		
-		</ul>
-	</div>
+                
 
+                      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2024-10-27T11:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/27/%E8%87%AA%E9%A9%BE%E8%BD%A6%E4%BA%8B%E6%95%85%E6%8E%A8%E7%90%86%E7%90%86%E8%A7%A3%EF%BC%9AAdVersa-SD%E4%B8%8EMM-AU%E6%95%B0%E6%8D%AE%E9%9B%86%E8%A7%A3%E6%9E%90/">自驾车事故推理理解：AdVersa-SD与MM-AU数据集解析</a>
-    </h1>
-  
+                            
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频理解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
-
+                                
+                                      
           </div>
         </div>
       </div>
@@ -453,9 +569,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 			isArchive: false,
-				isTag: true,
+				isTag: false,
 					isCategory: false,
 						open_in_new: false,
 							toc_hide_index: true,
