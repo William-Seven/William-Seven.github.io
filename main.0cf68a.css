@@ -369,7 +369,7 @@ body {
     color: #333;
     /*background-color: #fff;*/
     min-height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.998), rgba(255, 255, 255, 0.993)), url('img/mainbg.jpg') no-repeat 0% 0%/ cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.998), rgba(255, 255, 255, 0.409)), url('img/mainbg.jpg') no-repeat 0% 0%/ cover;
 }
 
 article,
