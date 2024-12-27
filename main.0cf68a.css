@@ -3638,6 +3638,10 @@ pre .id {
         -webkit-box-orient: vertical;
         padding: 0 24px
     }
+
+    body {
+        background: url('img/bg.jpg') no-repeat fixed top;
+    }
 }
 
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
