@@ -77,7 +77,7 @@
 						</ul>
 					</nav>
 					<nav class="totalnum">
-						总文章数 24
+						总文章数 25
 					</nav>
 					<nav class="header-smart-menu">
 						
@@ -177,6 +177,157 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-RLAIF及相关技术调研"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/03/06/RLAIF%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/">RLAIF及相关技术调研</a>
+    </h1>
+  
+
+
+          
+            <a href="/2026/03/06/RLAIF%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/" class="archive-article-date">
+  	<time datetime="2026-03-06T14:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-06</time>
+</a>
+              <!-- 需要添加的位置 -->
+              <!-- 开始添加字数统计-->
+              
+                <div style="margin-top:10px;">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text"> </span>
+            <span class="post-count">
+                1.5k字
+            </span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text"> 预计阅读时长: </span>
+            <span class="post-count">
+                5min
+            </span>
+        </span>
+    </span>
+</div>
+                  
+                    <!-- 添加完成 -->
+                    
+
+                      <!--显示阅读次数-->
+                      
+                          <!--显示阅读次数完毕-->
+
+      </header>
+      
+        <div class="article-entry" itemprop="articleBody">
+          
+                
+                  <p>随着 RLHF 成为大模型对齐（Alignment）的核心技术之一，越来越多研究开始探索使用 <strong>AI Feedback（RLAIF）</strong> 替代昂贵的人类标注，以降低训练成本并提升可扩展性。</p>
+<p>本文整理并调研了几种典型的 AI 反馈对齐方法，包括：</p>
+<ul>
+<li><strong>RLAIF</strong>：使用 AI 标注器替代人类反馈进行强化学习</li>
+<li><strong>RLAIF-V</strong>：通过原子陈述分解与视觉验证提升多模态模型可信度</li>
+<li><strong>Self-Rewarding LLM</strong>：模型自生成数据并进行自评估形成训练信号</li>
+<li><strong>Constitutional AI &#x2F; CCAI</strong>：通过原则或公众输入指导模型行为</li>
+</ul>
+<p>同时记录了这些方法在 <strong>偏好数据构造、LLM-as-a-Judge、DPO 训练</strong> 等关键环节中的实现思路。</p>
+<p>本文作为一份 <strong>RLAIF 系列技术阅读笔记</strong>，重点总结不同 AI Feedback 方案的核心流程与差异。</p>
+                    
+                        
+
+                              
+                                  
+        </div>
+        <div class="article-info article-info-index">
+          
+              
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM Alignment</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大模型</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">RLHF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RLAIF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI Feedback</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/论文阅读/大模型//" class="article-tag-list-link color4">大模型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                  
+                    <p class="article-more-link">
+                      <a class="article-more-a" href="/2026/03/06/RLAIF%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/">
+                        展开全文 >>
+                      </a>
+                    </p>
+                    
+
+                      
+                            <div class="clearfix"></div>
+        </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-VSCode-PowerShell-设置-UTF-8-编码之最简单方法"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1388,136 +1539,6 @@
 
         
   
-    <article id="post-多模态图像差异数据集-Img-Diff-的构建与应用"
-  class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/">多模态图像差异数据集 Img-Diff 的构建与应用</a>
-    </h1>
-  
-
-
-          
-            <a href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2024-10-30T09:51:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-30</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计-->
-              
-                <div style="margin-top:10px;">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text"> </span>
-            <span class="post-count">
-                2.8k字
-            </span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text"> 预计阅读时长: </span>
-            <span class="post-count">
-                10min
-            </span>
-        </span>
-    </span>
-</div>
-                  
-                    <!-- 添加完成 -->
-                    
-
-                      <!--显示阅读次数-->
-                      
-                          <!--显示阅读次数完毕-->
-
-      </header>
-      
-        <div class="article-entry" itemprop="articleBody">
-          
-                
-                  <p>本篇阅读笔记梳理了《<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2408.04594">Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models</a>》这篇论文的核心内容。论文提出了一个名为 <strong>Img-Diff</strong> 的数据集，专注于通过生成具有“物体替换”特征的相似图像对，来提升多模态大模型在细微图像差异识别任务中的表现。本篇笔记详细记录了论文中的数据集构建方法、对比学习的创新性应用，以及 Img-Diff 在视觉问答和图像差异识别基准测试中的显著提升效果。</p>
-                    
-                        
-
-                              
-                                  
-        </div>
-        <div class="article-info article-info-index">
-          
-              
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机视觉</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多模态</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据集构建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                  
-                    <p class="article-more-link">
-                      <a class="article-more-a" href="/2024/10/30/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE%E5%83%8F%E5%B7%AE%E5%BC%82%E6%95%B0%E6%8D%AE%E9%9B%86-Img-Diff-%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%BA%94%E7%94%A8/">
-                        展开全文 >>
-                      </a>
-                    </p>
-                    
-
-                      
-                            <div class="clearfix"></div>
-        </div>
-  </div>
-</article>
-
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-        
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1532,7 +1553,7 @@
 	<div class="outer">
 		<div id="footer-info">
 			<div class="footer-left">
-				&copy; 2025
+				&copy; 2026
 					WilliamZH
 			</div>
 
@@ -1790,6 +1811,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">编码格式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LLM Alignment</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RLHF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RLAIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">AI Feedback</a>
               </li>
             
             <div class="clearfix"></div>
