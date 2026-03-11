@@ -6,22 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Linux执行Ctrl-z后出现[1]+Stopped | WilliamZH&#39;s Blog</title>
+  <title>Training-Free GRPO | WilliamZH&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped">
+  <meta name="description" content="随着 RLHF 和 GRPO 成为当前大模型对齐（LLM Alignment）的主流方法，模型能力的提升往往依赖于大量训练资源、高质量偏好数据以及复杂的强化学习流程。Training-Free GRPO 提出了一种新的优化范式：在 不更新模型参数的情况下，通过 上下文学习（In-Context Learning）与经验库积累 持续提升 LLM Agent 的表现。 本文整理并解读了 Trainin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux执行Ctrl-z后出现[1]+Stopped">
-<meta property="og:url" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/index.html">
+<meta property="og:title" content="Training-Free GRPO">
+<meta property="og:url" content="http://example.com/2026/03/07/Training-Free-GRPO/index.html">
 <meta property="og:site_name" content="WilliamZH&#39;s Blog">
-<meta property="og:description" content="问题描述笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped">
+<meta property="og:description" content="随着 RLHF 和 GRPO 成为当前大模型对齐（LLM Alignment）的主流方法，模型能力的提升往往依赖于大量训练资源、高质量偏好数据以及复杂的强化学习流程。Training-Free GRPO 提出了一种新的优化范式：在 不更新模型参数的情况下，通过 上下文学习（In-Context Learning）与经验库积累 持续提升 LLM Agent 的表现。 本文整理并解读了 Trainin">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png">
-<meta property="article:published_time" content="2024-03-01T11:23:05.000Z">
-<meta property="article:modified_time" content="2024-08-14T09:15:30.153Z">
+<meta property="og:image" content="http://example.com/2026/03/07/Training-Free-GRPO/%E5%9B%BE%E7%89%871.png">
+<meta property="article:published_time" content="2026-03-07T09:10:32.000Z">
+<meta property="article:modified_time" content="2026-03-11T11:22:22.961Z">
 <meta property="article:author" content="WilliamZH">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="LLM Alignment">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="RLAIF">
+<meta property="article:tag" content="AI Feedback">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="Context Engineering">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png">
+<meta name="twitter:image" content="http://example.com/2026/03/07/Training-Free-GRPO/%E5%9B%BE%E7%89%871.png">
   
     <link rel="alternative" href="/atom.xml" title="WilliamZH&#39;s Blog" type="application/atom+xml">
   
@@ -181,7 +186,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux执行Ctrl-z后出现-1-Stopped"
+            <article id="post-Training-Free-GRPO"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -189,14 +194,14 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux执行Ctrl-z后出现[1]+Stopped
+      Training-Free GRPO
     </h1>
   
 
 
           
-            <a href="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" class="archive-article-date">
-  	<time datetime="2024-03-01T11:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-01</time>
+            <a href="/2026/03/07/Training-Free-GRPO/" class="archive-article-date">
+  	<time datetime="2026-03-07T09:10:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-03-07</time>
 </a>
               <!-- 需要添加的位置 -->
               <!-- 开始添加字数统计-->
@@ -207,7 +212,7 @@
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text"> </span>
             <span class="post-count">
-                82字
+                1.7k字
             </span>
         </span>
     </span>
@@ -218,7 +223,7 @@
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text"> 预计阅读时长: </span>
             <span class="post-count">
-                1min
+                6min
             </span>
         </span>
     </span>
@@ -242,10 +247,215 @@
         <div class="article-entry" itemprop="articleBody">
           
                 
-                          <p><strong>问题描述</strong><br>笔者在练习vimtutor时，下意识撤销键按了Ctrl-z，导致出现提示[1]-Stopped<br><img src="/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/%E6%8F%90%E7%A4%BA%E6%88%AA%E5%9B%BE.png"></p>
+                          <p>随着 RLHF 和 GRPO 成为当前大模型对齐（LLM Alignment）的主流方法，模型能力的提升往往依赖于大量训练资源、高质量偏好数据以及复杂的强化学习流程。<br>Training-Free GRPO 提出了一种新的优化范式：在 <strong>不更新模型参数的情况下</strong>，通过 <strong>上下文学习（In-Context Learning）与经验库积累</strong> 持续提升 LLM Agent 的表现。</p>
+<p>本文整理并解读了 Training-Free GRPO 的核心机制，包括 <strong>经验库构建、reward 评估、自我反思（introspection）以及 Agentic Context Engineering（ACE）框架</strong>。<br>同时对比了 <strong>RLHF &#x2F; GRPO &#x2F; RLAIF</strong> 等传统参数优化方法，分析了 Training-Free GRPO 在 <strong>计算成本、数据需求和持续学习能力</strong> 方面的优势与局限。</p>
 <span id="more"></span>
-<p><strong>解释</strong><br>其中，Stopped 代表有进程挂起 ，[1]是id号</p>
-<p><strong>解决方法</strong><br>可以通过Linux命令：<br><code>jobs</code> 查看挂起进程<br><code>fg 1</code> 把任务1放到前台<br><code>bg 1</code> 把任务1放到后台</p>
+
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2510.04618">https://arxiv.org/abs/2510.04618</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2510.08191">https://arxiv.org/abs/2510.08191</a></p>
+<p><img src="/2026/03/07/Training-Free-GRPO/%E5%9B%BE%E7%89%871.png"></p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在当前的大模型训练范式中，常见的做法是通过 <strong>微调（Fine-tuning）</strong> 或 <strong>强化学习（RLHF &#x2F; GRPO）</strong> 来提升模型能力。但这种方法存在一些明显问题：</p>
+<ul>
+<li><p><strong>训练资源需求高</strong><br>微调需要大量计算资源，训练成本较高。</p>
+</li>
+<li><p><strong>泛化能力有限</strong><br>通过参数调优得到的模型在跨领域任务上的泛化能力往往有限。</p>
+</li>
+<li><p><strong>数据成本高</strong><br>微调通常依赖高质量标注数据，而这些数据的构建成本较高。</p>
+</li>
+</ul>
+<p>此外，在长上下文任务中还可能出现 <strong>上下文崩塌（Context Collapse）</strong> 的问题：</p>
+<blockquote>
+<p>在多轮推理或重复重写上下文的过程中，模型可能逐渐丢失关键信息和细节，从而导致性能下降。</p>
+</blockquote>
+<h1 id="Training-Free-GRPO"><a href="#Training-Free-GRPO" class="headerlink" title="Training-Free GRPO"></a>Training-Free GRPO</h1><p>Training-Free GRPO 的目标是：</p>
+<blockquote>
+<p>在 <strong>不进行参数训练（training-free）</strong> 的情况下，以更低的数据和计算成本提升 <strong>LLM Agent 的表现</strong>。</p>
+</blockquote>
+<p>核心思想是利用 <strong>上下文学习（In-Context Learning, ICL）</strong> 来替代传统的模型参数更新。</p>
+<h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>方法整体流程如下：</p>
+<ol>
+<li><p><strong>维护外部经验库 <code>E</code></strong></p>
+<p>建立一个外部存储结构，用于记录模型在任务执行过程中总结出的经验知识。</p>
+</li>
+<li><p><strong>生成候选输出</strong></p>
+<p>对于一个输入 <code>query</code>：</p>
+<ul>
+<li>并行生成 <code>G</code> 个候选输出（outputs）</li>
+</ul>
+</li>
+<li><p><strong>Reward 评估</strong></p>
+<p>使用 <strong>reward model</strong> 为每个输出生成对应的奖励值：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reward(output_i)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><strong>生成总结</strong></li>
+</ol>
+<p>使用 LLM 对每个 output 生成对应的 <strong>summary</strong>，总结其行为或推理过程。</p>
+<ol start="5">
+<li><strong>经验抽取</strong></li>
+</ol>
+<p>通过一个额外的模板 prompt，将 summary 转换为自然语言经验：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A_text</span><br></pre></td></tr></table></figure>
+
+<p>该经验主要用于提炼：</p>
+<ul>
+<li>成功策略</li>
+<li>失败原因</li>
+</ul>
+<ol start="6">
+<li><strong>更新经验库</strong></li>
+</ol>
+<p>将所有 <code>A_text</code> 批量写入经验库 <code>E</code>，并进行：</p>
+<ul>
+<li>增加（add）</li>
+<li>删除（delete）</li>
+<li>修改（edit）</li>
+<li>保留（keep）</li>
+</ul>
+<p>从而逐步构建一个持续演化的经验知识库。</p>
+<h1 id="方法前提与局限"><a href="#方法前提与局限" class="headerlink" title="方法前提与局限"></a>方法前提与局限</h1><h2 id="1-模型能力前提"><a href="#1-模型能力前提" class="headerlink" title="1 模型能力前提"></a>1 模型能力前提</h2><p>该方法的有效性依赖于 <strong>底层模型能力</strong>。</p>
+<p>如果底层模型本身的推理能力较弱（例如较小规模模型），则该方法的效果可能会明显下降。</p>
+<h2 id="2-Reward-与-Self-Reflection-质量"><a href="#2-Reward-与-Self-Reflection-质量" class="headerlink" title="2 Reward 与 Self-Reflection 质量"></a>2 Reward 与 Self-Reflection 质量</h2><p>该方法高度依赖两个模块：</p>
+<ul>
+<li><strong>Reward Model</strong></li>
+<li><strong>LLM 的自我反思（Introspection）能力</strong></li>
+</ul>
+<p>如果：</p>
+<ul>
+<li>reward 打分不可靠</li>
+<li>summary &#x2F; insight 生成存在偏差</li>
+</ul>
+<p>则经验库中可能积累 <strong>错误或误导性知识</strong>，从而导致：</p>
+<ul>
+<li>模型性能下降</li>
+<li>或对噪声经验过拟合</li>
+</ul>
+<p>因此：</p>
+<blockquote>
+<p>语义经验 <code>A_text</code> 的质量是该方法成功的关键。</p>
+</blockquote>
+<h1 id="Agentic-Context-Engineering-ACE"><a href="#Agentic-Context-Engineering-ACE" class="headerlink" title="Agentic Context Engineering (ACE)"></a>Agentic Context Engineering (ACE)</h1><p>论文提出了 <strong>Agentic Context Engineering (ACE)</strong> 框架，用于系统化构建上下文经验。</p>
+<p>ACE 包含三个核心角色：</p>
+<h2 id="1-Generator"><a href="#1-Generator" class="headerlink" title="1 Generator"></a>1 Generator</h2><p>Generator 接收输入 <code>query</code>，并结合已有上下文信息，生成一系列：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reasoning trajectories</span><br></pre></td></tr></table></figure>
+
+<p>即不同的推理路径或解决方案。</p>
+<h2 id="2-Reflector"><a href="#2-Reflector" class="headerlink" title="2 Reflector"></a>2 Reflector</h2><p>Reflector 对生成的 trajectory 进行反思，并提炼出关键 insight：</p>
+<ul>
+<li>成功经验</li>
+<li>失败教训</li>
+</ul>
+<p>反思过程可以进行 <strong>多轮迭代</strong>，直到提取出最佳 insight。</p>
+<h2 id="3-Curator"><a href="#3-Curator" class="headerlink" title="3 Curator"></a>3 Curator</h2><p>Curator 将提炼出的 insight 转换为结构化信息，并写入上下文系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delta context items</span><br></pre></td></tr></table></figure>
+
+<p>这些内容可以进行 <strong>增量更新</strong>。</p>
+<h1 id="ACE-中的上下文结构"><a href="#ACE-中的上下文结构" class="headerlink" title="ACE 中的上下文结构"></a>ACE 中的上下文结构</h1><p>在 ACE 框架中：</p>
+<p>上下文不再是单一的大型 prompt，而是被表示为：</p>
+<blockquote>
+<p>一组结构化、逐条记录的 <strong>context bullets</strong></p>
+</blockquote>
+<p>这种设计可以：</p>
+<ul>
+<li>减少上下文崩塌</li>
+<li>提升经验可复用性</li>
+<li>支持动态更新上下文知识</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Training-Free GRPO 提出了一种新的 <strong>无参数训练优化范式</strong>：</p>
+<p>通过 <strong>经验库 + 自我反思 + 上下文工程</strong>，在不更新模型参数的情况下提升模型能力。</p>
+<p>核心思想可以概括为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">探索 → 评估 → 总结 → 经验沉淀 → 上下文增强</span><br></pre></td></tr></table></figure>
+
+<p>这种方法为 <strong>低成本提升 LLM Agent 能力</strong> 提供了一种新的思路。</p>
+<p>在未来，结合：</p>
+<ul>
+<li>RLAIF</li>
+<li>Self-Rewarding LLM</li>
+<li>Agentic Context Engineering</li>
+</ul>
+<p>可能形成一种 <strong>“无需训练的模型能力进化路径”</strong>。</p>
+<h1 id="Training-Free-GRPO-vs-RLHF-GRPO-对比"><a href="#Training-Free-GRPO-vs-RLHF-GRPO-对比" class="headerlink" title="Training-Free GRPO vs RLHF &#x2F; GRPO 对比"></a>Training-Free GRPO vs RLHF &#x2F; GRPO 对比</h1><p>为了更清晰地理解 Training-Free GRPO 的定位，可以将其与传统的 <strong>RLHF &#x2F; GRPO &#x2F; RLAIF</strong> 方法进行对比。</p>
+<h2 id="方法对比"><a href="#方法对比" class="headerlink" title="方法对比"></a>方法对比</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>是否需要训练</th>
+<th>数据来源</th>
+<th>计算成本</th>
+<th>核心机制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RLHF</td>
+<td>需要</td>
+<td>人类偏好数据</td>
+<td>很高</td>
+<td>reward model + RL</td>
+</tr>
+<tr>
+<td>RLAIF</td>
+<td>需要</td>
+<td>AI 反馈</td>
+<td>较高</td>
+<td>AI judge 替代人类</td>
+</tr>
+<tr>
+<td>GRPO</td>
+<td>需要</td>
+<td>reward model</td>
+<td>高</td>
+<td>policy optimization</td>
+</tr>
+<tr>
+<td><strong>Training-Free GRPO</strong></td>
+<td><strong>不需要</strong></td>
+<td>无标注数据</td>
+<td><strong>低</strong></td>
+<td>context learning + experience memory</td>
+</tr>
+</tbody></table>
+<p>可以看到：</p>
+<ul>
+<li><strong>RLHF &#x2F; GRPO &#x2F; RLAIF</strong> 都属于 <strong>参数更新（parameter update）范式</strong></li>
+<li><strong>Training-Free GRPO</strong> 属于 <strong>上下文优化（context optimization）范式</strong></li>
+</ul>
+<p>即：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">传统路线</span><br><span class="line">数据 → 训练 → 更新模型参数 → 能力提升</span><br></pre></td></tr></table></figure>
+
+<p>而 Training-Free GRPO 的思路是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">探索 → reward评估 → 经验总结 → 写入上下文 → 能力提升</span><br></pre></td></tr></table></figure>
+
+<p>模型参数 <strong>保持不变</strong>。</p>
+<h2 id="技术演化路径"><a href="#技术演化路径" class="headerlink" title="技术演化路径"></a>技术演化路径</h2><p>如果从 <strong>LLM Alignment 技术演化</strong> 的角度来看，大致可以分为三条路线：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RLHF</span><br><span class="line">├─ RLAIF</span><br><span class="line">└─ GRPO</span><br><span class="line">└─ Training-Free GRPO</span><br></pre></td></tr></table></figure>
+
+<p>同时还有另一条相关路线：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Self-Rewarding LLM</span><br><span class="line">│</span><br><span class="line">└─ Agentic Context Engineering (ACE)</span><br></pre></td></tr></table></figure>
+
+<p>这些方法的共同目标是：</p>
+<blockquote>
+<p>在降低数据成本和训练成本的情况下，实现大模型能力的持续提升。</p>
+</blockquote>
+<h2 id="核心思想差异"><a href="#核心思想差异" class="headerlink" title="核心思想差异"></a>核心思想差异</h2><h3 id="RLHF-GRPO"><a href="#RLHF-GRPO" class="headerlink" title="RLHF &#x2F; GRPO"></a>RLHF &#x2F; GRPO</h3><p>通过强化学习 <strong>更新模型参数</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LLM → 生成回答</span><br><span class="line">↓</span><br><span class="line">Reward Model</span><br><span class="line">↓</span><br><span class="line">Policy Optimization</span><br><span class="line">↓</span><br><span class="line">更新参数</span><br></pre></td></tr></table></figure>
+
+<h3 id="Training-Free-GRPO-1"><a href="#Training-Free-GRPO-1" class="headerlink" title="Training-Free GRPO"></a>Training-Free GRPO</h3><p>通过 <strong>经验积累 + 上下文增强</strong> 提升能力：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LLM → 生成多个解</span><br><span class="line">↓</span><br><span class="line">reward评估</span><br><span class="line">↓</span><br><span class="line">经验总结</span><br><span class="line">↓</span><br><span class="line">写入经验库</span><br><span class="line">↓</span><br><span class="line">下次作为context</span><br></pre></td></tr></table></figure>
+
+<p>模型参数 <strong>保持不变</strong>。</p>
+<h2 id="优势与局限"><a href="#优势与局限" class="headerlink" title="优势与局限"></a>优势与局限</h2><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>不需要额外训练</li>
+<li>计算成本低</li>
+<li>数据需求低</li>
+<li>适合 Agent 系统持续学习</li>
+</ul>
+<h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><ul>
+<li>依赖基础模型能力</li>
+<li>reward 质量影响很大</li>
+<li>经验库可能积累噪声</li>
+<li>长期效果仍需验证</li>
+</ul>
 
                             
 
@@ -293,7 +503,27 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LLM Alignment</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大模型</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RLAIF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AI Feedback</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Context Engineering</a>
         		</li>
       		
 		</ul>
@@ -305,7 +535,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        			<a href="/categories/论文阅读//" class="article-tag-list-link color5">论文阅读</a>
         		</li>
       		
 		</ul>
@@ -360,7 +590,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/03/01/Linux%E6%89%A7%E8%A1%8CCtrl-z%E5%90%8E%E5%87%BA%E7%8E%B0-1-Stopped/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2026/03/07/Training-Free-GRPO/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,18 +604,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/03/02/%E7%AC%AC23%E6%AC%A1CCFCSP%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          第23次CCFCSP解题报告
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/01/20/chmod%E5%91%BD%E4%BB%A4%E7%9A%84%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">chmod命令的快速使用指导</div>
+    <a href="/2026/03/06/RLAIF%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RLAIF及相关技术调研</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -404,6 +625,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Training-Free-GRPO"><span class="toc-number">2.</span> <span class="toc-text">Training-Free GRPO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">基本流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%89%8D%E6%8F%90%E4%B8%8E%E5%B1%80%E9%99%90"><span class="toc-number">3.</span> <span class="toc-text">方法前提与局限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%8A%9B%E5%89%8D%E6%8F%90"><span class="toc-number">3.1.</span> <span class="toc-text">1 模型能力前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Reward-%E4%B8%8E-Self-Reflection-%E8%B4%A8%E9%87%8F"><span class="toc-number">3.2.</span> <span class="toc-text">2 Reward 与 Self-Reflection 质量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Agentic-Context-Engineering-ACE"><span class="toc-number">4.</span> <span class="toc-text">Agentic Context Engineering (ACE)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Generator"><span class="toc-number">4.1.</span> <span class="toc-text">1 Generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Reflector"><span class="toc-number">4.2.</span> <span class="toc-text">2 Reflector</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Curator"><span class="toc-number">4.3.</span> <span class="toc-text">3 Curator</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ACE-%E4%B8%AD%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BB%93%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text">ACE 中的上下文结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Training-Free-GRPO-vs-RLHF-GRPO-%E5%AF%B9%E6%AF%94"><span class="toc-number">7.</span> <span class="toc-text">Training-Free GRPO vs RLHF &#x2F; GRPO 对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">7.1.</span> <span class="toc-text">方法对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%BC%94%E5%8C%96%E8%B7%AF%E5%BE%84"><span class="toc-number">7.2.</span> <span class="toc-text">技术演化路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%E5%B7%AE%E5%BC%82"><span class="toc-number">7.3.</span> <span class="toc-text">核心思想差异</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RLHF-GRPO"><span class="toc-number">7.3.1.</span> <span class="toc-text">RLHF &#x2F; GRPO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Training-Free-GRPO-1"><span class="toc-number">7.3.2.</span> <span class="toc-text">Training-Free GRPO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF%E4%B8%8E%E5%B1%80%E9%99%90"><span class="toc-number">7.4.</span> <span class="toc-text">优势与局限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-number">7.4.1.</span> <span class="toc-text">优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%99%90"><span class="toc-number">7.4.2.</span> <span class="toc-text">局限</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
