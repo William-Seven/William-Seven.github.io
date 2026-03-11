@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2026/03/07/Training-Free-GRPO/%E5%9B%BE%E7%89%871.png">
 <meta property="article:published_time" content="2026-03-07T09:10:32.000Z">
-<meta property="article:modified_time" content="2026-03-11T11:22:22.961Z">
+<meta property="article:modified_time" content="2026-03-11T11:31:11.399Z">
 <meta property="article:author" content="WilliamZH">
 <meta property="article:tag" content="LLM Alignment">
 <meta property="article:tag" content="大模型">
@@ -273,47 +273,20 @@
 <p>核心思想是利用 <strong>上下文学习（In-Context Learning, ICL）</strong> 来替代传统的模型参数更新。</p>
 <h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>方法整体流程如下：</p>
 <ol>
-<li><p><strong>维护外部经验库 <code>E</code></strong></p>
-<p>建立一个外部存储结构，用于记录模型在任务执行过程中总结出的经验知识。</p>
-</li>
-<li><p><strong>生成候选输出</strong></p>
-<p>对于一个输入 <code>query</code>：</p>
-<ul>
-<li>并行生成 <code>G</code> 个候选输出（outputs）</li>
-</ul>
-</li>
-<li><p><strong>Reward 评估</strong></p>
-<p>使用 <strong>reward model</strong> 为每个输出生成对应的奖励值：</p>
-</li>
+<li><strong>维护外部经验库 <code>E</code></strong><br>建立一个外部存储结构，用于记录模型在任务执行过程中总结出的经验知识。</li>
+<li><strong>生成候选输出</strong><br>对于一个输入 <code>query</code>：<br> 并行生成 <code>G</code> 个候选输出（outputs）</li>
+<li><strong>Reward 评估</strong><br>使用 <strong>reward model</strong> 为每个输出生成对应的奖励值：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reward(output_i)</span><br></pre></td></tr></table></figure></li>
+<li><strong>生成总结</strong><br>使用 LLM 对每个 output 生成对应的 <strong>summary</strong>，总结其行为或推理过程。</li>
+<li><strong>经验抽取</strong><br>通过一个额外的模板 prompt，将 summary 转换为自然语言经验：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A_text</span><br></pre></td></tr></table></figure>
+该经验主要用于提炼：成功策略、失败原因</li>
+<li><strong>更新经验库</strong><br>将所有 <code>A_text</code> 批量写入经验库 <code>E</code>，并进行：</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reward(output_i)</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><strong>生成总结</strong></li>
-</ol>
-<p>使用 LLM 对每个 output 生成对应的 <strong>summary</strong>，总结其行为或推理过程。</p>
-<ol start="5">
-<li><strong>经验抽取</strong></li>
-</ol>
-<p>通过一个额外的模板 prompt，将 summary 转换为自然语言经验：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A_text</span><br></pre></td></tr></table></figure>
-
-<p>该经验主要用于提炼：</p>
-<ul>
-<li>成功策略</li>
-<li>失败原因</li>
-</ul>
-<ol start="6">
-<li><strong>更新经验库</strong></li>
-</ol>
-<p>将所有 <code>A_text</code> 批量写入经验库 <code>E</code>，并进行：</p>
 <ul>
 <li>增加（add）</li>
 <li>删除（delete）</li>
 <li>修改（edit）</li>
-<li>保留（keep）</li>
+<li>保留（keep）<br>从而逐步构建一个持续演化的经验知识库。</li>
 </ul>
-<p>从而逐步构建一个持续演化的经验知识库。</p>
 <h1 id="方法前提与局限"><a href="#方法前提与局限" class="headerlink" title="方法前提与局限"></a>方法前提与局限</h1><h2 id="1-模型能力前提"><a href="#1-模型能力前提" class="headerlink" title="1 模型能力前提"></a>1 模型能力前提</h2><p>该方法的有效性依赖于 <strong>底层模型能力</strong>。</p>
 <p>如果底层模型本身的推理能力较弱（例如较小规模模型），则该方法的效果可能会明显下降。</p>
 <h2 id="2-Reward-与-Self-Reflection-质量"><a href="#2-Reward-与-Self-Reflection-质量" class="headerlink" title="2 Reward 与 Self-Reflection 质量"></a>2 Reward 与 Self-Reflection 质量</h2><p>该方法高度依赖两个模块：</p>
@@ -339,7 +312,6 @@
 <p>ACE 包含三个核心角色：</p>
 <h2 id="1-Generator"><a href="#1-Generator" class="headerlink" title="1 Generator"></a>1 Generator</h2><p>Generator 接收输入 <code>query</code>，并结合已有上下文信息，生成一系列：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reasoning trajectories</span><br></pre></td></tr></table></figure>
-
 <p>即不同的推理路径或解决方案。</p>
 <h2 id="2-Reflector"><a href="#2-Reflector" class="headerlink" title="2 Reflector"></a>2 Reflector</h2><p>Reflector 对生成的 trajectory 进行反思，并提炼出关键 insight：</p>
 <ul>
@@ -442,7 +414,6 @@
 
 <h3 id="Training-Free-GRPO-1"><a href="#Training-Free-GRPO-1" class="headerlink" title="Training-Free GRPO"></a>Training-Free GRPO</h3><p>通过 <strong>经验积累 + 上下文增强</strong> 提升能力：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LLM → 生成多个解</span><br><span class="line">↓</span><br><span class="line">reward评估</span><br><span class="line">↓</span><br><span class="line">经验总结</span><br><span class="line">↓</span><br><span class="line">写入经验库</span><br><span class="line">↓</span><br><span class="line">下次作为context</span><br></pre></td></tr></table></figure>
-
 <p>模型参数 <strong>保持不变</strong>。</p>
 <h2 id="优势与局限"><a href="#优势与局限" class="headerlink" title="优势与局限"></a>优势与局限</h2><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
 <li>不需要额外训练</li>
